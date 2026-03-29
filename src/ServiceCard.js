@@ -29,7 +29,7 @@ export default function ServiceCard({ icon, title, discription }) {
           ></img>
         </div>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography variant="h4" gutterBottom  component="div">
             {title}
           </Typography>
           <Typography variant="body2">

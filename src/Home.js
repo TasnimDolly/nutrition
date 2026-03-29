@@ -62,15 +62,17 @@ export default function Home() {
       <div className="page">
         <Container
           className="container"
-          sx={{ color: "secondary.main", width: "400px" }}
+          sx={{ color: "secondary.main", width: "400px", textAlign: "right" }}
         >
-          <Typography sx={{ textAlign: "right" }}>
-            لنحيَا بعَافية و سَلام ...
-          </Typography>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4">لنحيَا بعَافية و سَلام ...</Typography>
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{ padding: "15px 0 ", textAlign: "left" }}
+          >
             عيادة عافية وسلام
           </Typography>
-          <Typography sx={{ padding: "10px 0 30px" }}>
+          <Typography sx={{ padding: "0 0 30px", fontSize: "24px" }}>
             بإشراف اختصاصية التغذية سلام معطي خبرة 8 سنوات بالتغذية العلاجية
             داخل وخارج سوريا 5000+ مشترك باحثة ماجستير بإدارة الرعاية الصحية
             دبلوم علم نفس تغذوي أستاذة في كلية التغذية جامعة حمص
@@ -90,8 +92,8 @@ export default function Home() {
 
       {/* Services */}
 
-      <div style={{ margin: "0 100px" }}>
-        <Typography variant="h4" gutterBottom sx={{ padding: "16px 0" }}>
+      <Container sx={{ margin: "0 auto", color: "secondary.main" }}>
+        <Typography variant="h4" gutterBottom sx={{ padding: "20px 0" }}>
           الخدمات
         </Typography>
         <Grid container spacing={8}>
@@ -110,19 +112,19 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
-      </div>
+      </Container>
 
       {/* Services */}
 
       {/* Reviews */}
-      <Container sx={{ color: "secondary" }}>
+      <Container sx={{ color: "secondary.main" }}>
         <Typography variant="h4" gutterBottom sx={{ padding: "20px 0" }}>
           آراء المرضى
         </Typography>
 
-        <div>
+        <Container>
           <Avatar
-            sx={{ margin: "auto", width: "100px", height: "100px" }}
+            sx={{ margin: "5px auto", width: "100px", height: "100px" }}
             src="/broken-image.jpg"
           />
           <Typography variant="h5" gutterBottom sx={{ color: "text.hover" }}>
@@ -146,7 +148,7 @@ export default function Home() {
             <div style={circl}></div>
             <div style={circl}></div>
           </div>
-        </div>
+        </Container>
       </Container>
 
       {/* Reviews */}

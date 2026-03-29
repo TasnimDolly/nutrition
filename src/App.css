@@ -1,3 +1,26 @@
+/* custom fonts  */
+@font-face {
+  font-family: Almarai;
+  src: url("/public/fonts/Almarai-Regular.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Almarai;
+  src: url("/public/fonts/Almarai-Light.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Almarai;
+  src: url("/public/fonts/Almarai-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Almarai;
+  src: url("/public/fonts/Almarai-ExtraBold.ttf");
+  font-weight: 800;
+}
+/* custom fonts  */
+
 .App {
   text-align: center;
 }
