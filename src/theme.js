@@ -19,7 +19,22 @@ const theme = createTheme({
       fontSize: 20,
     },
   },
-
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "#A0D7E2",
+          "&:hover": { color: "#EF7261" },
+          cursor: "pointer",
+          fontFamily: "Almarai",
+          fontWeight: 400,
+          fontSize: 20,
+          margin: "3px 0",
+          textUnderlinePosition:"none"
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       main: "#0D6F73",

@@ -16,7 +16,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import Container from "@mui/material/Container";
 
-const pages = ["الرئيسية", "باقات الإشتراك", "الورشات", "المنتجات", "التواصل"];
+const pages = ["الرئيسية", "باقات الإشتراك", "الورشات", "المنتجات", "اتصل بنا"];
 
 export default function Foot() {
   return (
@@ -25,7 +25,6 @@ export default function Foot() {
       sx={{
         color: "secondary.default",
         backgroundColor: "secondary.main",
-
         height: "400px",
       }}
     >
@@ -46,16 +45,7 @@ export default function Foot() {
               }}
             >
               {pages.map((page) => (
-                <Link
-                  underline="none"
-                  sx={{
-                    color: "secondary.default",
-                    "&:hover": { color: "text.hover" },
-                    cursor: "pointer",
-                  }}
-                >
-                  {page}
-                </Link>
+                <Link>{page}</Link>
               ))}
             </Box>
           </Grid>
@@ -121,16 +111,7 @@ export default function Foot() {
           <Typography>@ جميع الحقوق محفوظة لدى عافية وسلام</Typography>
           <Typography>
             التصميم بواسطة :
-            <Link
-              href="hanadihasan661@gmail.com"
-              underline="none"
-              sx={{
-                color: "inherit",
-                "&:hover": { color: "text.hover" },
-              }}
-            >
-              HanadiHasan
-            </Link>
+            <Link href="hanadihasan661@gmail.com">HanadiHasan</Link>
           </Typography>
         </Box>
       </Box>
