@@ -1,19 +1,27 @@
 {
   "files": {
-    "main.css": "/nutrition/static/css/main.3e243a39.css",
-    "main.js": "/nutrition/static/js/main.af5c75c6.js",
+    "main.css": "/nutrition/static/css/main.c7597208.css",
+    "main.js": "/nutrition/static/js/main.db9a8d55.js",
     "static/js/453.4105e6c7.chunk.js": "/nutrition/static/js/453.4105e6c7.chunk.js",
+    "static/media/Contact.png": "/nutrition/static/media/Contact.1bc66c92fe8cd0b97d3b.png",
     "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
     "static/media/Location.jpg": "/nutrition/static/media/Location.086a3faa809667c2bb31.jpg",
+    "static/media/login.png": "/nutrition/static/media/login.aee4daff108ddc2abcb6.png",
+    "static/media/Almarai-ExtraBold.ttf": "/nutrition/static/media/Almarai-ExtraBold.47d78d91a100ffc16d36.ttf",
+    "static/media/Almarai-Bold.ttf": "/nutrition/static/media/Almarai-Bold.6950c5a6d2dcd9e29b5d.ttf",
+    "static/media/Almarai-Regular.ttf": "/nutrition/static/media/Almarai-Regular.4d8fe12612ad34e16602.ttf",
+    "static/media/Almarai-Light.ttf": "/nutrition/static/media/Almarai-Light.e91bfa6b2938b4255992.ttf",
+    "static/media/forgetpassword1.png": "/nutrition/static/media/forgetpassword1.35326976f9999d87c0cc.png",
+    "static/media/resetpassword.png": "/nutrition/static/media/resetpassword.61056f87b7acaf8f9342.png",
     "static/media/icon2.png": "/nutrition/static/media/icon2.7f5e9f3a26cb7037bc5c.png",
     "static/media/FootLogo.png": "/nutrition/static/media/FootLogo.dff2824b044bddc052c2.png",
     "index.html": "/nutrition/index.html",
-    "main.3e243a39.css.map": "/nutrition/static/css/main.3e243a39.css.map",
-    "main.af5c75c6.js.map": "/nutrition/static/js/main.af5c75c6.js.map",
+    "main.c7597208.css.map": "/nutrition/static/css/main.c7597208.css.map",
+    "main.db9a8d55.js.map": "/nutrition/static/js/main.db9a8d55.js.map",
     "453.4105e6c7.chunk.js.map": "/nutrition/static/js/453.4105e6c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e243a39.css",
-    "static/js/main.af5c75c6.js"
+    "static/css/main.c7597208.css",
+    "static/js/main.db9a8d55.js"
   ]
 }
