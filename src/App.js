@@ -1,18 +1,27 @@
 import "./App.css";
-import {  ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
-import Bar from "./Bar";
-import Home from "./Home";
-import Foot from "./Foot";
+import { Route, Routes } from "react-router-dom";
+import Home from "../src/Components/Home";
+import ForgetPassword from "../src/Components/ForgetPassword.js";
+import ResetPassword from "../src/Components/ResetPassword.js";
+import Login from "../src/Components/Login.js";
+import Contact from "../src/Components/Contact.js";
 
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
       <ThemeProvider theme={theme}>
-        <Bar></Bar>
-        <Home></Home>
-        {/* <div style={{ height: "1500px" }}></div> */}
-        <Foot></Foot>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgetPassword" element={<ForgetPassword />} />
+          {/* just now  */}
+
+          {/* <Route path="/" element={<ResetPassword />} /> */}
+          <Route path="/contact" element={<Contact />} />
+                <Route path='/' element={<Home/>}/>
+                <Route path='/r' element={<ResetPassword/>}/>
+        </Routes>
       </ThemeProvider>
     </div>
   );

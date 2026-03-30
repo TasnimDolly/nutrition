@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "./imgs/BarLogo.png";
+import logo from "../imgs/BarLogo.png";
 
 // mui library Component
 import AppBar from "@mui/material/AppBar";
@@ -13,22 +13,23 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 // mui library Component
 
+import { Link as RouterLink } from "react-router-dom";
+
 // icons
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Badge from "@mui/material/Badge";
-import { colors } from "@mui/material";
 // icons
 
 export default function Bar() {
   const pages = [
-    "الرئيسية",
-    "باقات الإشتراك",
-    "الورشات",
-    "المنتجات",
-    "اتصل بنا",
+    { name: "الرئيسية", path: "/" },
+    { name: "باقات الإشتراك", path: "/" },
+    { name: "الورشات", path: "/" },
+    { name: "المنتجات", path: "/" },
+    { name: "اتصل بنا", path: "/contact" },
   ];
 
   const [anchorElNav, setAnchorElNav] = useState(false);
@@ -51,7 +52,6 @@ export default function Bar() {
           width: "100%",
           backgroundColor: "secondary.main",
           color: "secondary.default",
-          // "&hover": { color: "secondary.hover" },
         }}
       >
         <Container maxWidth="100%">
@@ -71,18 +71,23 @@ export default function Bar() {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  // onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "inherit",
-                    display: "block",
-                    "&:hover": { color: "text.hover" },
-                  }}
+                <RouterLink
+                  style={{ color: "#A0D7E2", textDecoration: "none" }}
+                  to={page.path}
                 >
-                  {page}
-                </Button>
+                  <Button
+                    key={page.name}
+                    // onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      color: "inherit",
+                      display: "block",
+                      "&:hover": { color: "text.hover" },
+                    }}
+                  >
+                    {page.name}
+                  </Button>
+                </RouterLink>
               ))}
             </Box>
             <Box
@@ -160,8 +165,8 @@ export default function Bar() {
                 sx={{ display: { xs: "block", md: "none" } }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page}>
-                    <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                  <MenuItem key={page.name}>
+                    <Typography sx={{ textAlign: "center" }}>{page.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>

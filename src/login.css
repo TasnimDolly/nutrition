@@ -1,0 +1,49 @@
+/* .page {
+  min-height: 100vh;
+  background: url(./imgs/Landing.svg) center center no-repeat;
+  background-size: cover; */
+/* } */
+.loginpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginpage .container .card {
+  background: #a0d7e2;
+  padding: 40px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #0d6f73;
+  box-shadow: 15px 15px 25px 0px #00000040;
+}
+.loginpage .container .card img {
+  width: 440px;
+  height: 440px;
+}
+.loginpage .container form div:first-child,
+.loginpage .container form div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginpage .container form div:first-child {
+  margin-bottom: 35px;
+}
+.textfield label {
+  color: #0d6f73;
+  font-size: 19px;
+  transform-origin: right !important;
+  right: 20px;
+  left: unset;
+}
+
+.link {
+  text-decoration: none;
+  color: #777777;
+  font-size: 16px;
+}
+.loginpage img {
+  max-width: 500px;
+}

@@ -1,4 +1,4 @@
-import "./Home.css";
+import "../Home.css";
 
 // mui library Component
 import Container from "@mui/material/Container";
@@ -11,11 +11,16 @@ import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
 // mui library Component
 
+import { Link as RouterLink } from "react-router-dom";
+
+import Bar from "./Bar";
+import Foot from "./Foot";
+
 //imgs
-import icon1 from "./imgs/icon1.png";
-import icon2 from "./imgs/icon2.png";
-import icon3 from "./imgs/icon3.png";
-import location from "./imgs/Location.jpg";
+import icon1 from "../imgs/icon1.png";
+import icon2 from "../imgs/icon2.png";
+import icon3 from "../imgs/icon3.png";
+import location from "../imgs/Location.jpg";
 //imgs
 
 export default function Home() {
@@ -58,10 +63,9 @@ export default function Home() {
   return (
     <>
       {/* landing  */}
-
+      <Bar />
       <div className="page">
-        <Container
-          className="container"
+        <Container className="home-container"
           sx={{ color: "secondary.main", width: "400px", textAlign: "right" }}
         >
           <Typography variant="h4">لنحيَا بعَافية و سَلام ...</Typography>
@@ -81,9 +85,14 @@ export default function Home() {
             <Button variant="contained" className="button">
               إنشاء حساب
             </Button>
-            <Button variant="contained" className="button">
-              تسجيل دخول
-            </Button>
+            <RouterLink
+              to="/login"
+              style={{ color: "#A0D7E2", textDecoration: "none" }}
+            >
+              <Button variant="contained" className="button">
+                تسجيل دخول
+              </Button>
+            </RouterLink>
           </Stack>
         </Container>
       </div>
@@ -121,7 +130,6 @@ export default function Home() {
         <Typography variant="h4" gutterBottom sx={{ padding: "20px 0" }}>
           آراء المرضى
         </Typography>
-
         <Container>
           <Avatar
             sx={{ margin: "5px auto", width: "100px", height: "100px" }}
@@ -155,9 +163,9 @@ export default function Home() {
 
       {/* location */}
       <Typography
-        variant="h5"
+        variant="h4"
         gutterBottom
-        sx={{ padding: "16px 90px", textAlign: "right" }}
+        sx={{ padding: "16px 90px", textAlign: "right" ,color:"secondary.main"}}
       >
         موقعنا الحالي
       </Typography>
@@ -168,6 +176,7 @@ export default function Home() {
         style={{ width: "100%", height: "100%" }}
       ></img>
       {/* location */}
+      <Foot />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import logo from "./imgs/FootLogo.png";
+import logo from "../imgs/FootLogo.png";
 
 // mui library Component
 import Grid from "@mui/material/Grid";
@@ -108,7 +108,12 @@ export default function Foot() {
 
         <hr style={{ width: "70%" }}></hr>
         <Box sx={{ padding: "15px 0 0 " }}>
-          <Typography>@ جميع الحقوق محفوظة لدى عافية وسلام</Typography>
+          <Typography>
+            @ جميع الحقوق محفوظة لدى{" "}
+            <Typography component="span" sx={{ color: "text.hover" }}>
+              عافية وسلام{" "}
+            </Typography>
+          </Typography>
           <Typography>
             التصميم بواسطة :
             <Link href="hanadihasan661@gmail.com">HanadiHasan</Link>

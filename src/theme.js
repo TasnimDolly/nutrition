@@ -30,7 +30,7 @@ const theme = createTheme({
           fontWeight: 400,
           fontSize: 20,
           margin: "3px 0",
-          textUnderlinePosition:"none"
+          textDecoration: "none",
         },
       },
     },
@@ -38,6 +38,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#0D6F73",
+      bg: "#DCECF0",
     },
     secondary: {
       main: "#06363D",
@@ -46,6 +47,7 @@ const theme = createTheme({
     text: {
       primary: "#0D6F73",
       secondary: "#777777",
+      dark: "#06363D",
       hover: "#EF7261",
     },
   },
