@@ -8,6 +8,7 @@ import ResetPassword from "../src/Components/ResetPassword.js";
 import Login from "../src/Components/Login.js";
 import Contact from "../src/Components/Contact.js";
 import CreateAccount from "../src/Components/CreateAccount.js";
+import Notifications from "./Components/Notifications.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route path="/notifications" element={<Notifications />} />
           {/* just now  */}
 
           {/* <Route path="/" element={<ResetPassword />} /> */}

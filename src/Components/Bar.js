@@ -21,6 +21,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Badge from "@mui/material/Badge";
+import { colors } from "@mui/material";
 // icons
 
 export default function Bar() {
@@ -115,18 +116,23 @@ export default function Bar() {
               >
                 <AccountCircle />
               </IconButton>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-                sx={{ "&:hover": { color: "text.hover" } }}
+              <RouterLink
+                to="/notifications"
+                style={{ color: "inherit"}}
               >
-                <Badge badgeContent={17} color="primary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                  sx={{ "&:hover": { color: "text.hover" } }}
+                >
+                  <Badge badgeContent={17} color="primary">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+              </RouterLink>
             </Box>
             {/* large screens */}
 
@@ -166,7 +172,9 @@ export default function Bar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page.name}>
-                    <Typography sx={{ textAlign: "center" }}>{page.name}</Typography>
+                    <Typography sx={{ textAlign: "center" }}>
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
