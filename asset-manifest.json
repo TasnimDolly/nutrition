@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/nutrition/static/css/main.775e61a3.css",
-    "main.js": "/nutrition/static/js/main.b7ed3688.js",
+    "main.css": "/nutrition/static/css/main.22b0701d.css",
+    "main.js": "/nutrition/static/js/main.07e70814.js",
     "static/js/453.4105e6c7.chunk.js": "/nutrition/static/js/453.4105e6c7.chunk.js",
     "static/media/Contact.png": "/nutrition/static/media/Contact.1bc66c92fe8cd0b97d3b.png",
-    "static/media/Landing.svg": "/nutrition/static/media/Landing.71d35631f6040a822596.svg",
+    "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
     "static/media/Location.jpg": "/nutrition/static/media/Location.086a3faa809667c2bb31.jpg",
     "static/media/login.png": "/nutrition/static/media/login.217e3e8264d2f223bad6.png",
     "static/media/Almarai-ExtraBold.ttf": "/nutrition/static/media/Almarai-ExtraBold.47d78d91a100ffc16d36.ttf",
@@ -17,12 +17,12 @@
     "static/media/icon2.png": "/nutrition/static/media/icon2.7f5e9f3a26cb7037bc5c.png",
     "static/media/FootLogo.png": "/nutrition/static/media/FootLogo.dff2824b044bddc052c2.png",
     "index.html": "/nutrition/index.html",
-    "main.775e61a3.css.map": "/nutrition/static/css/main.775e61a3.css.map",
-    "main.b7ed3688.js.map": "/nutrition/static/js/main.b7ed3688.js.map",
+    "main.22b0701d.css.map": "/nutrition/static/css/main.22b0701d.css.map",
+    "main.07e70814.js.map": "/nutrition/static/js/main.07e70814.js.map",
     "453.4105e6c7.chunk.js.map": "/nutrition/static/js/453.4105e6c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.775e61a3.css",
-    "static/js/main.b7ed3688.js"
+    "static/css/main.22b0701d.css",
+    "static/js/main.07e70814.js"
   ]
 }
