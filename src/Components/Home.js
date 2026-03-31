@@ -82,9 +82,14 @@ export default function Home() {
             دبلوم علم نفس تغذوي أستاذة في كلية التغذية جامعة حمص
           </Typography>
           <Stack spacing={2} direction="row" gap="35px">
+              <RouterLink
+              to="/createaccount"
+              style={{ color: "#A0D7E2", textDecoration: "none" }}
+            >
             <Button variant="contained" className="button">
               إنشاء حساب
-            </Button>
+              </Button>
+              </RouterLink>
             <RouterLink
               to="/login"
               style={{ color: "#A0D7E2", textDecoration: "none" }}

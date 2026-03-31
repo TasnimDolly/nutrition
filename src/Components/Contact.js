@@ -19,7 +19,7 @@ export default function Contact() {
       <Stack className="contactPage" sx={{ backgroundColor: "primary.bg" }}>
         <img src={contactimg} alt="" />
         <Typography
-          sx={{ fontSize: 28, margin: "40px 40px 0px 0px", fontWeight: "bold" }}
+          sx={{ fontSize: 28, margin: "40px 40px 0px 0px", fontWeight: "bold" ,textAlign:"right"}}
           color="text.dark"
         >
           تواصل معنا
@@ -32,7 +32,7 @@ export default function Contact() {
           }}
           color="text.dark"
         >
-          <Typography sx={{ fontSize: "24px" }} color="text.primary">
+          <Typography sx={{ fontSize: "24px" ,textAlign:"right"}} color="text.primary">
             نحن هنا لمساعدتك تواصل معنا عبر هذا النموذج أو عبر الإتصال مباشرة
           </Typography>
           <Stack

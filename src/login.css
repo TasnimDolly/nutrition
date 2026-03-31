@@ -1,8 +1,8 @@
 /* .page {
   min-height: 100vh;
   background: url(./imgs/Landing.svg) center center no-repeat;
-  background-size: cover; */
-/* } */
+  background-size: cover; 
+ }  */
 .loginpage {
   display: flex;
   align-items: center;
@@ -18,10 +18,11 @@
   border: 1px solid #0d6f73;
   box-shadow: 15px 15px 25px 0px #00000040;
 }
-.loginpage .container .card img {
-  width: 440px;
+/* .loginpage .container .card img {
+  width: 400px;
   height: 440px;
-}
+} */
+
 .loginpage .container form div:first-child,
 .loginpage .container form div:nth-child(2) {
   display: flex;

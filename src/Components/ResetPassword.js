@@ -10,10 +10,10 @@ import InputAdornment from "@mui/material/InputAdornment";
 export default function ResetPassword() {
   return (
     <>
-      <LoginLayout img={resetimg} backTo={"/login"}>
+      <LoginLayout img={resetimg} backTo={"/"}>
         <Typography
           sx={{
-            color: "text.primary",
+            color: "text.skyblue",
             fontWeight: "bold",
           }}
         >

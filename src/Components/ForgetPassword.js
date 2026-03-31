@@ -1,6 +1,6 @@
 // Mui Components
 import LoginLayout from "./LoginLayout.js";
-import forgetimg from "../imgs/forgetpassword1.png";
+import forgetimg from "../imgs/forgetpassword.png";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
@@ -14,7 +14,7 @@ export default function ForgetPassword() {
       <LoginLayout img={forgetimg} backTo={"/login"}>
         <Typography
           sx={{
-            color: "text.primary",
+            color: "text.skyblue",
             fontWeight: "bold",
           }}
         >

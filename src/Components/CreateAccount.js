@@ -1,7 +1,5 @@
 import LoginLayout from "./LoginLayout";
-import { Link } from "react-router-dom";
-import loginimg from "../imgs/login.png";
-// Mui Components
+import createaccountimg from "../imgs/createaccount.png";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -11,43 +9,54 @@ import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 import Stack from "@mui/material/Stack";
 import InputAdornment from "@mui/material/InputAdornment";
-// Mui Components
-export default function Login() {
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+
+export default function CreateAccount() {
   return (
     <>
-      <LoginLayout img={loginimg} backTo={"/"}>
+      <LoginLayout img={createaccountimg} backTo={"/"}>
         <Typography
           sx={{
             color: "text.skyblue",
             fontWeight: "bold",
           }}
         >
-          مرحبا بعودتك سجل الدخول للمتابعة
+          أنشئ حسابك الآن وابدأ رحلتك الصحية معنا{" "}
         </Typography>
         <form>
+          <TextField
+            fullWidth
+            className="textfield"
+            placeholder="ادخل اسمك"
+            label="الاسم"
+            slotProps={{
+              input: {
+                endAdornment: (
+                  <InputAdornment position="end">
+                    {" "}
+                    <PermIdentityIcon sx={{ fontSize: 30 }} />
+                  </InputAdornment>
+                ),
+              },
+            }}
+            sx={{}}
+            variant="standard"
+          />
           <TextField
             fullWidth
             className="textfield"
             placeholder="@mail.com"
             label="البريد الالكتروني"
             slotProps={{
-              htmlInput: {
-                sx: {
-                  "&::placeholder": { fontSize: 20 },
-                },
-              },
               input: {
                 endAdornment: (
                   <InputAdornment position="end">
+                    {" "}
                     <EmailIcon sx={{ fontSize: 30 }} />
                   </InputAdornment>
                 ),
               },
-            }}
-            sx={{
-              "& ": { marginTop: "41px" },
-              "& .MuiInputLabel-root.Mui-focused": { color: "text.primary" },
-              "& .MuiInput-input": { fontSize: "19px" },
             }}
             variant="standard"
           />
@@ -65,11 +74,23 @@ export default function Login() {
                   </InputAdornment>
                 ),
               },
-              htmlInput: { sx: { "&::placeholder": { fontSize: 20 } } },
             }}
-            sx={{
-              "& .MuiInputLabel-root.Mui-focused": { color: "text.primary" },
-              "& .MuiInput-input": { fontSize: "19px" },
+            variant="standard"
+          />
+          <TextField
+            fullWidth
+            className="textfield"
+            placeholder="تاكيد كلمة السر"
+            label="تاكيد كلمة السر"
+            slotProps={{
+              input: {
+                endAdornment: (
+                  <InputAdornment position="end">
+                    {" "}
+                    <VisibilityIcon sx={{ fontSize: 30 }} />
+                  </InputAdornment>
+                ),
+              },
             }}
             variant="standard"
           />
@@ -84,43 +105,15 @@ export default function Login() {
                 <Checkbox
                   sx={{
                     fontSize: 10,
-                    "& .MuiSvgIcon-root": { fontSize: 30, padding: 0 },
-                    "&.Mui-checked": {
-                      color: "primary",
-                    },
                   }}
                 />
               }
-              label="حفظ كلمة السر"
-              sx={{
-                "& .MuiFormControlLabel-label ": {
-                  fontSize: "16px",
-                  color: "text.secondary",
-                },
-                margin: 0,
-                "& .MuiCheckbox-root": { padding: 0 },
-              }}
+              label="أنت موافق على سياسة لخصوصية و شروط المستخدم"
             ></FormControlLabel>
-
-            <Typography sx={{ fontSize: "16px" }}>
-              <Link to="/forgetPassword" className="link">
-                هل نسيت كلمة السر ؟
-              </Link>
-            </Typography>
           </Stack>
           <Button
             sx={{ display: "block", width: "100%", margin: "5px 0px 22px" }}
             color={"primary"}
-            variant="contained"
-          >
-            تسجيل الدخول{" "}
-          </Button>
-
-          <Button
-            sx={{
-              width: "100%",
-            }}
-            color={"secondary"}
             variant="contained"
           >
             انشاء حساب{" "}

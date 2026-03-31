@@ -34,6 +34,60 @@ const theme = createTheme({
         },
       },
     },
+     MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInput-input': {
+            fontSize: "19px"
+          },
+          "&.Mui-checked": {
+            color: "primary",
+          },
+          "& .MuiSvgIcon-root": {
+            fontSize: 30,
+            padding: 0
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "text.primary"
+          },
+          "& ": {
+            marginTop: "41px"
+          },
+
+          htmlInput: {
+            sx: {
+              "&::placeholder": {
+                fontSize: 10
+              },
+            },
+          },
+        }
+      }
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          "& .MuiFormControlLabel-label ": {
+            fontSize: "16px",
+            color: '#777777'
+          },
+          "& .MuiCheckbox-root": {
+            padding: 0
+          },
+          'margin': '0'
+
+
+        }
+
+
+      },
+     
+    }
+  
+
+
+
+
   },
   palette: {
     primary: {
@@ -43,12 +97,13 @@ const theme = createTheme({
     secondary: {
       main: "#06363D",
       default: "#A0D7E2",
+   
     },
     text: {
       primary: "#0D6F73",
       secondary: "#777777",
       dark: "#06363D",
-      hover: "#EF7261",
+      hover: "#EF7261",    skyblue: '#289EA9'
     },
   },
 });

@@ -7,6 +7,7 @@ import ForgetPassword from "../src/Components/ForgetPassword.js";
 import ResetPassword from "../src/Components/ResetPassword.js";
 import Login from "../src/Components/Login.js";
 import Contact from "../src/Components/Contact.js";
+import CreateAccount from "../src/Components/CreateAccount.js";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
                 <Route path='/' element={<Home/>}/>
                 <Route path='/r' element={<ResetPassword/>}/>
+                <Route path='/createaccount' element={<CreateAccount/>}/>
         </Routes>
       </ThemeProvider>
     </div>
