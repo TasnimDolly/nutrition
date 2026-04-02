@@ -57,7 +57,7 @@ export default function Notifications() {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="h4">الإشعارات</Typography>
+          <Typography variant="h4" sx={{ alignSelf: "center"}}>الإشعارات</Typography>
           <Button
             sx={{
               backgroundColor: "text.skyblue",
@@ -69,43 +69,6 @@ export default function Notifications() {
             تحديد الكل كمقروء
           </Button>
         </Box>
-        <FormControl
-          sx={{
-            m: 1,
-            width: "100ch",
-            direction: "ltr",
-          }}
-          variant="outlined"
-        >
-          <OutlinedInput
-            id="بحث في الإشعارات"
-            type="text"
-            sx={{
-              "& filedset": { direction: "rtl" },
-              "& .MuiOutlinedInput-notchedOutline": {
-                direction: "rtl",
-              },
-              "& .MuiOutlinedInput-notchedOutline legend": {
-                textAlign: "right",
-                marginRight: "50px",
-              },
-            }}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton aria-label="بحث في الإشعارات">
-                  <SearchIcon></SearchIcon>
-                </IconButton>
-              </InputAdornment>
-            }
-            label="بحث في الإشعارات"
-          />
-          <InputLabel
-            htmlFor="بحث في الإشعارات "
-            sx={{ left: "auto", right: "80px", transformOrigin: "top right" }}
-          >
-            بحث في الإشعارات
-          </InputLabel>
-        </FormControl>
         {data.map((alart) => (
           <NotificationsAlert
             status={alart.status}

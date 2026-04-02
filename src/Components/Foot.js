@@ -1,5 +1,7 @@
 import logo from "../imgs/FootLogo.png";
 
+import { Link as RouterLink } from "react-router-dom";
+
 // mui library Component
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
@@ -16,7 +18,13 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import Container from "@mui/material/Container";
 
-const pages = ["الرئيسية", "باقات الإشتراك", "الورشات", "المنتجات", "اتصل بنا"];
+const pages = [
+  { name: "الرئيسية", path: "/Home" },
+  { name: "باقات الإشتراك", path: "/Packages" },
+  { name: "الورشات", path: "/Workshops" },
+  { name: "المنتجات", path: "/Products" },
+  { name: "اتصل بنا", path: "/contact" },
+];
 
 export default function Foot() {
   return (
@@ -45,7 +53,12 @@ export default function Foot() {
               }}
             >
               {pages.map((page) => (
-                <Link>{page}</Link>
+                <RouterLink
+                  style={{ color: "#A0D7E2", textDecoration: "none" }}
+                  to={page.path}
+                >
+                  <Link>{page.name}</Link>
+                </RouterLink>
               ))}
             </Box>
           </Grid>

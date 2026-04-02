@@ -9,6 +9,7 @@ import Login from "../src/Components/Login.js";
 import Contact from "../src/Components/Contact.js";
 import CreateAccount from "../src/Components/CreateAccount.js";
 import Notifications from "./Components/Notifications.js";
+import Packages from "./Components/Packages.js";
 
 function App() {
   return (
@@ -19,12 +20,17 @@ function App() {
           <Route path="/forgetPassword" element={<ForgetPassword />} />
           <Route path="/notifications" element={<Notifications />} />
           {/* just now  */}
-
           {/* <Route path="/" element={<ResetPassword />} /> */}
           <Route path="/contact" element={<Contact />} />
-                <Route path='/' element={<Home/>}/>
-                <Route path='/r' element={<ResetPassword/>}/>
-                <Route path='/createaccount' element={<CreateAccount/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/r" element={<ResetPassword />} />
+          <Route path="/createaccount" element={<CreateAccount />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Packages" element={<Packages />} />
+
+          {/* //for hanooooon */}
+          {/* <Route path="/Products" element={<Products/>} /> */}
+          {/* <Route path="/Workshops" element={<Workshops/>} /> */}
         </Routes>
       </ThemeProvider>
     </div>

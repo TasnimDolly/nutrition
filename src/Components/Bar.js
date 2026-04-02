@@ -21,15 +21,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Badge from "@mui/material/Badge";
-import { colors } from "@mui/material";
 // icons
 
 export default function Bar() {
   const pages = [
-    { name: "الرئيسية", path: "/" },
-    { name: "باقات الإشتراك", path: "/" },
-    { name: "الورشات", path: "/" },
-    { name: "المنتجات", path: "/" },
+    { name: "الرئيسية", path: "/Home" },
+    { name: "باقات الإشتراك", path: "/Packages" },
+    { name: "الورشات", path: "/Workshops" },
+    { name: "المنتجات", path: "/Products" },
     { name: "اتصل بنا", path: "/contact" },
   ];
 
