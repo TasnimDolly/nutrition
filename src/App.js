@@ -13,7 +13,7 @@ import Packages from "./Components/Packages.js";
 import NutritionalPackages from "./Components/NutritionalPackages.js";
 import DevicePackages from "./Components/DevicePackages.js";
 import InjectionPackages from "./Components/InjectionPackages.js";
-
+import Products from "./Components/Products.js";
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -35,8 +35,9 @@ function App() {
           />
           <Route path="/DevicePackages Packages" element={<DevicePackages />} />
           <Route path="/InjectionPackages" element={<InjectionPackages />} />
-
-          {/* //for hanooooon */}
+          <Route path="/Packages" element={<Packages />} />
+          <Route path="/Products" element={<Products />} />
+          {/* //for hanooooon  */} { /* ولك كبييييرة */}
           {/* <Route path="/Products" element={<Products/>} /> */}
           {/* <Route path="/Workshops" element={<Workshops/>} /> */}
         </Routes>
