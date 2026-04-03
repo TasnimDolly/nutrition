@@ -17,14 +17,14 @@ export default function Notifications({ status, title, info, time }) {
           display: "flex",
           flexDirection: "row",
           alignItems: "start",
-          justifyContent:"space-between",
-          gap: "10px",
+          justifyContent: "space-between",
         }}
       >
         <Box
           sx={{
             display: "flex",
             flexDirection: "row",
+            gap: "10px",
           }}
         >
           {status ? (

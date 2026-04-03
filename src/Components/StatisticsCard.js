@@ -1,17 +1,28 @@
 // mui library Component
-import Container from "@mui/material/Container";
+import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 // mui library Component
 
 export default function StatisticsCard({ icon, num, title }) {
   return (
-    <Container
+    <Box
       sx={{
-        width: "300px",
-        height: "100px",
         color: "secondary.main",
         backgroundColor: "primary.bg",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "40px",
+        padding: "30px",
+        boxShadow: "0px 0 30px rgb(0 0 0 / 20%)",
+        width:"300px"
       }}
-      
-    ></Container>
+    >
+      <Box>
+        <Typography>{num}</Typography>
+        <Typography>happy client</Typography>
+      </Box>
+      {icon}
+    </Box>
   );
 }

@@ -10,6 +10,9 @@ import Contact from "../src/Components/Contact.js";
 import CreateAccount from "../src/Components/CreateAccount.js";
 import Notifications from "./Components/Notifications.js";
 import Packages from "./Components/Packages.js";
+import NutritionalPackages from "./Components/NutritionalPackages.js";
+import DevicePackages from "./Components/DevicePackages.js";
+import InjectionPackages from "./Components/InjectionPackages.js";
 
 function App() {
   return (
@@ -26,7 +29,12 @@ function App() {
           <Route path="/r" element={<ResetPassword />} />
           <Route path="/createaccount" element={<CreateAccount />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Packages" element={<Packages />} />
+          <Route
+            path="/NutritionalPackages"
+            element={<NutritionalPackages />}
+          />
+          <Route path="/DevicePackages Packages" element={<DevicePackages />} />
+          <Route path="/InjectionPackages" element={<InjectionPackages />} />
 
           {/* //for hanooooon */}
           {/* <Route path="/Products" element={<Products/>} /> */}

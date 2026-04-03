@@ -17,9 +17,11 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import Container from "@mui/material/Container";
+import { Margin } from "@mui/icons-material";
 
 const pages = [
   { name: "الرئيسية", path: "/Home" },
+  { name: "المواعيد و الحجز", path: "/Booking" },
   { name: "باقات الإشتراك", path: "/Packages" },
   { name: "الورشات", path: "/Workshops" },
   { name: "المنتجات", path: "/Products" },
@@ -54,8 +56,13 @@ export default function Foot() {
             >
               {pages.map((page) => (
                 <RouterLink
-                  style={{ color: "#A0D7E2", textDecoration: "none" }}
+                  style={{
+                    color: "#A0D7E2",
+                    textDecoration: "none",
+                    padding: "4px",
+                  }}
                   to={page.path}
+                  className="foot-links"
                 >
                   <Link>{page.name}</Link>
                 </RouterLink>
@@ -127,6 +134,7 @@ export default function Foot() {
               عافية وسلام{" "}
             </Typography>
           </Typography>
+
           <Typography>
             التصميم بواسطة :
             <Link href="hanadihasan661@gmail.com">HanadiHasan</Link>

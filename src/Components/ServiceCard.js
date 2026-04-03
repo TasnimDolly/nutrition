@@ -1,4 +1,5 @@
 // mui library Component
+import { SvgIcon } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -10,31 +11,24 @@ export default function ServiceCard({ icon, title, discription }) {
       <Card
         sx={{
           display: "flex",
-          // alignItems:"center",
+          alignItems: "center",
+          gap: "20px",
           justifyContent: "center",
           flexDirection: "column",
           height: "370px",
           backgroundColor: "secondary.default",
           color: "secondary.main",
+          "&:hover": { border: "5px #06363D groove" },
         }}
       >
-        <div size="large" color="inherit" sx={{ mr: 2 }}>
-          <img
-            src={icon}
-            alt={title}
-            style={{
-              width: "150px",
-              height: "200px",
-            }}
-          ></img>
-        </div>
+        <SvgIcon color="inherit" sx={{ height: "170px", width: "220px" }}>
+          {icon}
+        </SvgIcon>
         <CardContent>
-          <Typography variant="h4" gutterBottom  component="div">
+          <Typography variant="h4" gutterBottom component="div">
             {title}
           </Typography>
-          <Typography variant="body2">
-            {discription}
-          </Typography>
+          <Typography variant="body2">{discription}</Typography>
         </CardContent>
       </Card>
     </>

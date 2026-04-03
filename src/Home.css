@@ -1,5 +1,5 @@
 .page {
-  min-height: 100vh;
+  min-height: calc(100vh - 86px);
   background: url(./imgs/Landing.svg) center center no-repeat;
   background-size: cover;
   width: 100%;

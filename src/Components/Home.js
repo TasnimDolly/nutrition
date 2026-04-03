@@ -5,8 +5,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import ServiceCard from "./ServiceCard";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
 // mui library Component
@@ -15,19 +15,23 @@ import { Link as RouterLink } from "react-router-dom";
 
 import Bar from "./Bar";
 import Foot from "./Foot";
+import StatisticsCard from "./StatisticsCard";
+import ServiceCard from "./ServiceCard";
 
 //imgs
-import icon1 from "../imgs/icon1.png";
-import icon2 from "../imgs/icon2.png";
-import icon3 from "../imgs/icon3.png";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import ScienceIcon from "@mui/icons-material/Science";
+import HomeIcon from "@mui/icons-material/Home";
 import location from "../imgs/Location.jpg";
+import clinic from "../imgs/clinic.jpg";
+import { IconButton } from "@mui/material";
 //imgs
 
 export default function Home() {
   const Services = [
     {
       id: 1,
-      icon: icon1,
+      icon: <CalendarMonthIcon />,
       title: "الحجز والمواعيد",
       discription: `حجز سريع وسهل
 تذكير بالمواعيد
@@ -35,20 +39,18 @@ export default function Home() {
     },
     {
       id: 2,
-      icon: icon2,
+      icon: <ScienceIcon />,
+      title: " جهاز INBODY ",
+      discription: `لقياس مكونات الجسم
+      دهون - عضلات - ماء - عظام- العمر البيولوجي - نسبة الإستقلاب - توزع الدهون و العضلات`,
+    },
+    {
+      id: 3,
+      icon: <HomeIcon />,
       title: "إستشارة أونلاين",
       discription: `إستشارة سريعة بدون إنتظار
 تواصل مباشر مع الطبيب
 متابعة حالتك من المنزل`,
-    },
-    {
-      id: 3,
-      icon: icon3,
-      title: "التحاليل الطبية",
-      discription: `
-إستلام النتائج إلكترونياً
-سرية تامة للبيانات
-عرض تاريخ التحاليل القديمة`,
     },
   ];
 
@@ -65,7 +67,8 @@ export default function Home() {
       {/* landing  */}
       <Bar />
       <div className="page">
-        <Container className="home-container"
+        <Container
+          className="home-container"
           sx={{ color: "secondary.main", width: "400px", textAlign: "right" }}
         >
           <Typography variant="h4">لنحيَا بعَافية و سَلام ...</Typography>
@@ -82,14 +85,14 @@ export default function Home() {
             دبلوم علم نفس تغذوي أستاذة في كلية التغذية جامعة حمص
           </Typography>
           <Stack spacing={2} direction="row" gap="35px">
-              <RouterLink
+            <RouterLink
               to="/createaccount"
               style={{ color: "#A0D7E2", textDecoration: "none" }}
             >
-            <Button variant="contained" className="button">
-              إنشاء حساب
+              <Button variant="contained" className="button">
+                إنشاء حساب
               </Button>
-              </RouterLink>
+            </RouterLink>
             <RouterLink
               to="/login"
               style={{ color: "#A0D7E2", textDecoration: "none" }}
@@ -103,6 +106,69 @@ export default function Home() {
       </div>
 
       {/* landing  */}
+
+      {/* Statistics */}
+
+      <Grid container sx={{ padding: "40px 0" }} spacing={4}>
+        <Grid size={{ xs: 3, md: 4 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignContent: "center",
+              // justifyContent:"center",
+              gap: "100px",
+              margin: "40px 50px 40px 0",
+            }}
+          >
+            <StatisticsCard
+              icon={<HomeIcon className="staticon"></HomeIcon>}
+              num="15"
+              title="helooo"
+            ></StatisticsCard>
+            <StatisticsCard
+              icon={<HomeIcon></HomeIcon>}
+              num="15"
+              title="helooo"
+            ></StatisticsCard>
+          </Box>
+        </Grid>
+        <Grid size={{ xs: 3, md: 4 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "100px",
+              margin: "40px 0",
+            }}
+          >
+            <StatisticsCard
+              icon={<HomeIcon></HomeIcon>}
+              num="15"
+              title="helooo"
+            ></StatisticsCard>
+            <StatisticsCard
+              icon={<HomeIcon></HomeIcon>}
+              num="15"
+              title="helooo"
+            ></StatisticsCard>
+          </Box>
+        </Grid>
+        <Grid size={{ xs: 6, md: 4 }}>
+          <img
+            src={clinic}
+            alt="clinic"
+            style={{
+              width: "90%",
+              height: "100%",
+              border: "5px #06363D solid",
+              margin: "0 0 0 50px",
+            }}
+          ></img>
+        </Grid>
+      </Grid>
+
+      {/* Statistics */}
 
       {/* Services */}
 
@@ -170,7 +236,11 @@ export default function Home() {
       <Typography
         variant="h4"
         gutterBottom
-        sx={{ padding: "16px 90px", textAlign: "right" ,color:"secondary.main"}}
+        sx={{
+          padding: "16px 90px",
+          textAlign: "right",
+          color: "secondary.main",
+        }}
       >
         موقعنا الحالي
       </Typography>
