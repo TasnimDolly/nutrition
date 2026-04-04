@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/nutrition/static/css/main.75f82082.css",
-    "main.js": "/nutrition/static/js/main.f01e943e.js",
+    "main.css": "/nutrition/static/css/main.1a1146d1.css",
+    "main.js": "/nutrition/static/js/main.7064c674.js",
     "static/js/453.4105e6c7.chunk.js": "/nutrition/static/js/453.4105e6c7.chunk.js",
     "static/media/Contact.png": "/nutrition/static/media/Contact.1bc66c92fe8cd0b97d3b.png",
-    "static/media/Landing.svg": "/nutrition/static/media/Landing.71d35631f6040a822596.svg",
+    "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
+    "static/media/packagesbg.png": "/nutrition/static/media/packagesbg.c5ffb32cd67f9dc6800a.png",
     "static/media/clinic.jpg": "/nutrition/static/media/clinic.2ec3c4fa3b8ac9b975f4.jpg",
     "static/media/Location.jpg": "/nutrition/static/media/Location.086a3faa809667c2bb31.jpg",
     "static/media/product8.png": "/nutrition/static/media/product8.f18db1c85bc8a1c6e9f8.png",
@@ -28,14 +29,13 @@
     "static/media/product12.png": "/nutrition/static/media/product12.43b74efee32df7d03260.png",
     "static/media/product11.png": "/nutrition/static/media/product11.1d69d486bb106516d66b.png",
     "static/media/resetpassword.png": "/nutrition/static/media/resetpassword.61056f87b7acaf8f9342.png",
-    "static/media/FootLogo.png": "/nutrition/static/media/FootLogo.dff2824b044bddc052c2.png",
     "index.html": "/nutrition/index.html",
-    "main.75f82082.css.map": "/nutrition/static/css/main.75f82082.css.map",
-    "main.f01e943e.js.map": "/nutrition/static/js/main.f01e943e.js.map",
+    "main.1a1146d1.css.map": "/nutrition/static/css/main.1a1146d1.css.map",
+    "main.7064c674.js.map": "/nutrition/static/js/main.7064c674.js.map",
     "453.4105e6c7.chunk.js.map": "/nutrition/static/js/453.4105e6c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.75f82082.css",
-    "static/js/main.f01e943e.js"
+    "static/css/main.1a1146d1.css",
+    "static/js/main.7064c674.js"
   ]
 }
