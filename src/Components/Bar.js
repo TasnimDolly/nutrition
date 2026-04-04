@@ -20,7 +20,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 // icons
 import NotificationsIcon from "@mui/icons-material/Notifications";
-// import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Badge from "@mui/material/Badge";
 // icons
@@ -68,8 +68,6 @@ export default function Bar() {
                 flexGrow: 1,
                 display: { xs: "none", md: "flex" },
                 justifyContent: "space-evenly",
-                fontSize: "20px",
-                // size: "24px",
               }}
             >
               {pages.map((page) =>
@@ -83,6 +81,7 @@ export default function Bar() {
                         display: "block",
                         "&:hover": { color: "text.hover" },
                         margin: "0 5px",
+                        fontSize: { md: "17px", lg: "20px" },
                       }}
                       onClick={showPackagesMenu}
                     >
@@ -133,6 +132,7 @@ export default function Bar() {
                         display: "block",
                         "&:hover": { color: "text.hover" },
                         margin: "0 5px",
+                        fontSize: { md: "17px", lg: "20px" },
                       }}
                     >
                       {page.name}
@@ -192,11 +192,12 @@ export default function Bar() {
             {/* large screens */}
 
             {/* small screems */}
-            {/* <Box
+
+            <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: "flex", md: "none" },
-                direction: "ltr",
+                // flexGrow: 1,
+                display: { md: "none" },
+                // direction: "ltr",
               }}
             >
               <IconButton
@@ -205,11 +206,11 @@ export default function Bar() {
                 color="inherit"
                 aria-label="menu"
                 sx={{ mr: 2, display: { xs: "flex", md: "none" } }}
-                onClick={showNavMenu}
+                // onClick={showNavMenu}
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
+              {/* <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
@@ -232,8 +233,8 @@ export default function Bar() {
                     </Typography>
                   </MenuItem>
                 ))}
-              </Menu>
-            </Box> */}
+              </Menu> */}
+            </Box>
 
             {/* small screems */}
           </Toolbar>

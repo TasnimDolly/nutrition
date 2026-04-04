@@ -9,7 +9,6 @@ import Login from "../src/Components/Login.js";
 import Contact from "../src/Components/Contact.js";
 import CreateAccount from "../src/Components/CreateAccount.js";
 import Notifications from "./Components/Notifications.js";
-import Packages from "./Components/Packages.js";
 import NutritionalPackages from "./Components/NutritionalPackages.js";
 import DevicePackages from "./Components/DevicePackages.js";
 import InjectionPackages from "./Components/InjectionPackages.js";
@@ -35,9 +34,9 @@ function App() {
           />
           <Route path="/DevicePackages Packages" element={<DevicePackages />} />
           <Route path="/InjectionPackages" element={<InjectionPackages />} />
-          <Route path="/Packages" element={<Packages />} />
           <Route path="/Products" element={<Products />} />
-          {/* //for hanooooon  */} { /* ولك كبييييرة */}
+          {/* //for hanooooon  */} {/* ولك كبييييرة */}
+          {/*يا ويلكممممممممممممممممممممممممم كم حنون عنا */}
           {/* <Route path="/Products" element={<Products/>} /> */}
           {/* <Route path="/Workshops" element={<Workshops/>} /> */}
         </Routes>
