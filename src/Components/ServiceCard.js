@@ -16,9 +16,10 @@ export default function ServiceCard({ icon, title, discription }) {
           justifyContent: "center",
           flexDirection: "column",
           height: "370px",
+          width:"330px",
           backgroundColor: "secondary.default",
           color: "secondary.main",
-          "&:hover": { border: "5px #06363D groove" },
+          "&:hover": { border: "5px #06363D groove", transition: "0.3s" },
         }}
       >
         <SvgIcon color="inherit" sx={{ height: "170px", width: "220px" }}>

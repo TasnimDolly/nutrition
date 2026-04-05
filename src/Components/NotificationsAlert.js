@@ -48,7 +48,7 @@ export default function Notifications({ status, title, info, time }) {
           </Box>
         </Box>
         <IconButton
-          sx={{ color: "text.secondary", alignSelf: "center", left: 0 }}
+          sx={{ color: "text.secondary", alignSelf: "center",left: 0 }}
         >
           <DeleteIcon />
         </IconButton>

@@ -27,8 +27,12 @@
   margin-left: 10px !important;
 }
 .foot-icons:hover {
-  color: #EF7261 !important;
-  border-color: #EF7261 !important;
+  color: #ef7261 !important;
+  border-color: #ef7261 !important;
+}
+.adding-to-cart:hover {
+  transition: 0.3s;
+  box-shadow: -4px 4px 0px 0px rgba(6, 54, 61, 0.5) !important;
 }
 
 .App {
@@ -70,21 +74,20 @@
   }
 }
 .productspage .MuiButtonGroup-middleButton {
-    border: 1px solid currentColor;
+  border: 1px solid currentColor;
 }
 
 .productspage .card:hover {
-    border-radius: 10%;
-    transform: scale(1.2) translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-    z-index: 10;
-
+  border-radius: 10%;
+  transform: scale(1.2) translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 10;
 }
 
 .productspage .card {
-    position: relative;
-    transition: 0.4s ease all;
+  position: relative;
+  transition: 0.4s ease all;
 }
 .productspage .filterbox {
-    box-shadow: 0px 4px 4px 0px #00000040
+  box-shadow: 0px 4px 4px 0px #00000040;
 }

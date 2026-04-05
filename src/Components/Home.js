@@ -3,7 +3,6 @@ import "../Home.css";
 // mui library Component
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -19,10 +18,12 @@ import StatisticsCard from "./StatisticsCard";
 import ServiceCard from "./ServiceCard";
 
 //imgs
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ScienceIcon from "@mui/icons-material/Science";
 import HomeIcon from "@mui/icons-material/Home";
 import location from "../imgs/Location.jpg";
+import FlatwareIcon from "@mui/icons-material/Flatware";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import clinic from "../imgs/clinic.jpg";
 import { IconButton } from "@mui/material";
 //imgs
@@ -31,26 +32,30 @@ export default function Home() {
   const Services = [
     {
       id: 1,
-      icon: <CalendarMonthIcon />,
-      title: "الحجز والمواعيد",
-      discription: `حجز سريع وسهل
-تذكير بالمواعيد
-إمكانية الإلغاء أو التعديل أونلاين`,
+      icon: <FlatwareIcon />,
+      title: "وصفات طعام صحية",
+      discription: "لمساعدتك في تحقيق أهدافك الصحية من خلال وصفات لذيذة ومغذية",
     },
     {
       id: 2,
-      icon: <ScienceIcon />,
-      title: " جهاز INBODY ",
-      discription: `لقياس مكونات الجسم
-      دهون - عضلات - ماء - عظام- العمر البيولوجي - نسبة الإستقلاب - توزع الدهون و العضلات`,
-    },
-    {
-      id: 3,
       icon: <HomeIcon />,
       title: "إستشارة أونلاين",
       discription: `إستشارة سريعة بدون إنتظار
 تواصل مباشر مع الطبيب
 متابعة حالتك من المنزل`,
+    },
+    {
+      id: 3,
+      icon: <MenuBookIcon />,
+      title: "جداول غذائية مخصصة",
+      discription:
+        "لتحقيق أهدافك الصحية من خلال جداول غذائية مخصصة تناسب احتياجاتك وتفضيلاتك الشخصية",
+    },
+    {
+      id: 4,
+      icon: <ScienceIcon />,
+      title: " قراءة تقرير مكونات الجسم",
+      discription: "لفهم تركيب جسمك وتحقيق أهدافك بشكل مستنير",
     },
   ];
 
@@ -66,135 +71,190 @@ export default function Home() {
     <>
       {/* landing  */}
       <Bar />
-      <div className="page">
-        <Container
-          className="home-container"
-          sx={{ color: "secondary.main", width: "400px", textAlign: "right" }}
+      <Box
+        className="page"
+        sx={{
+          color: "secondary.main",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            marginBottom: "90px",
+          }}
         >
-          <Typography variant="h4">لنحيَا بعَافية و سَلام ...</Typography>
           <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ padding: "15px 0 ", textAlign: "left" }}
+            sx={{ fontSize: { xs: "70px", md: "90px" }, fontWeight: 500 }}
+          >
+            لنحيَا بعَافية و سَلام{" "}
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "35px", md: "40px" },
+              fontWeight: 400,
+              padding: "20px 0 30px",
+            }}
           >
             عيادة عافية وسلام
           </Typography>
-          <Typography sx={{ padding: "0 0 30px", fontSize: "24px" }}>
-            بإشراف اختصاصية التغذية سلام معطي خبرة 8 سنوات بالتغذية العلاجية
-            داخل وخارج سوريا 5000+ مشترك باحثة ماجستير بإدارة الرعاية الصحية
-            دبلوم علم نفس تغذوي أستاذة في كلية التغذية جامعة حمص
-          </Typography>
-          <Stack spacing={2} direction="row" gap="35px">
-            <RouterLink
-              to="/createaccount"
-              style={{ color: "#A0D7E2", textDecoration: "none" }}
-            >
-              <Button variant="contained" className="button">
-                إنشاء حساب
-              </Button>
-            </RouterLink>
-            <RouterLink
-              to="/login"
-              style={{ color: "#A0D7E2", textDecoration: "none" }}
-            >
-              <Button variant="contained" className="button">
-                تسجيل دخول
-              </Button>
-            </RouterLink>
-          </Stack>
-        </Container>
-      </div>
+          <Button
+            className="landing-button"
+            sx={{
+              backgroundColor: "secondary.main",
+              color: "white",
+              padding: "20px",
+              borderRadius: "50px",
+              "$:hover": { boxShadow: 16 },
+              gap: "10px",
+            }}
+          >
+            احجز موعدك الان
+            <ArrowBackIcon />
+          </Button>
+        </Box>
+      </Box>
 
       {/* landing  */}
 
-      {/* Statistics */}
+      {/* Services */}
 
-      <Grid container sx={{ padding: "40px 0" }} spacing={4}>
-        <Grid size={{ xs: 3, md: 4 }}>
-          <Box
+      <Box sx={{ margin: "0 auto", color: "secondary.main" }}>
+        <Typography variant="h4" gutterBottom sx={{ padding: "20px 0" }}>
+          الخدمات
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "40px",
+            flexWrap: "wrap",
+          }}
+        >
+          {Services.map((service) => (
+            <ServiceCard
+              key={service.id}
+              icon={service.icon}
+              title={service.title}
+              discription={service.discription}
+            ></ServiceCard>
+          ))}
+        </Box>
+      </Box>
+
+      {/* Services */}
+
+      {/* who are we  */}
+      <Box
+        sx={{
+          marginTop: "140px",
+          backgroundColor: "secondary.main",
+          height: {xs: "fit-content", md: "700px"},
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "0 20px",
+          fontSize: "20px !important",
+        }}
+      >
+        <Box
+          sx={{
+            height: "100%",
+            width: { xs: "100%", md: "50%" },
+            padding: "0 20px",
+            color: "text.lightwhite",
+            textAlign: "right",
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignContent: "center",
-              // justifyContent:"center",
-              gap: "100px",
-              margin: "40px 50px 40px 0",
+              color: "text.lightwhite",
+              padding: "40px 0",
+              fontSize: { xs: "25px", md: "30px" },
             }}
           >
-            <StatisticsCard
-              icon={<HomeIcon className="staticon"></HomeIcon>}
-              num="15"
-              title="helooo"
-            ></StatisticsCard>
-            <StatisticsCard
-              icon={<HomeIcon></HomeIcon>}
-              num="15"
-              title="helooo"
-            ></StatisticsCard>
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 3, md: 4 }}>
-          <Box
+            من نحن؟
+          </Typography>
+          <Typography sx={{ marginBottom: "20px" }}>
+            عيادة عافية وسلام بإشراف اختصاصية التغذية سلام معطي
+          </Typography>
+          <Typography>
+            - خبرة 8 سنوات بالتغذية العلاجية داخل وخارج سوريا
+          </Typography>
+          <Typography>- دبلوم علم نفس تغذوي</Typography>
+          <Typography>- باحثة ماجستير بإدارة الرعاية الصحية</Typography>
+          <Typography sx={{ marginBottom: "20px" }}>
+            - أستاذة في كلية التغذية جامعة حمص
+          </Typography>
+            <hr width="70%" />
+          <Typography sx={{ marginBottom: "20px" }}>
+            نحن نؤمن بأن كل شخص يمكنه تحسين نمط حياته لذلك نقدم:
+          </Typography>
+          <Typography>
+            - برامج غذائية لإدارة الوزن مع خطط غذائية لدعم اضطرابات الأكل وحميات
+            علاجية
+          </Typography>
+          <Typography>
+            - جلسات استشارية وتحليل مكونات الجسم باستخدام جهاز INBODY
+          </Typography>
+          <Typography>- اشتراكات جماعية ممتعة وبرامج توعية صحية</Typography>
+          <Typography>
+            - تقنيات التنحيف EMS، كرايو، كافيتيشن، RF، فاكيوم، ليزر بادز، أبر
+            إذابة الدهون الموضعية وأبر المونجارو والأوزمبك
+          </Typography>
+          <Typography>- ستاند الصحة: سناكات صحية وأدوات عملية</Typography>
+          <Typography
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "100px",
-              margin: "40px 0",
+              color: "text.lightwhite",
+              padding: "30px 0",
+              textAlign: "left",
             }}
           >
-            <StatisticsCard
-              icon={<HomeIcon></HomeIcon>}
-              num="15"
-              title="helooo"
-            ></StatisticsCard>
-            <StatisticsCard
-              icon={<HomeIcon></HomeIcon>}
-              num="15"
-              title="helooo"
-            ></StatisticsCard>
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 6, md: 4 }}>
+            معكم نحو حياة صحية وسعيدة ..!
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: { xs: "0%", md: "40%" },
+            height: "100%",
+          }}
+        >
           <img
             src={clinic}
             alt="clinic"
             style={{
-              width: "90%",
+              width: "100%",
               height: "100%",
-              border: "5px #06363D solid",
-              margin: "0 0 0 50px",
+              position: "relative",
+              bottom: "10%",
             }}
-          ></img>
-        </Grid>
-      </Grid>
+          />
+        </Box>
+      </Box>
+      {/* who are we  */}
 
       {/* Statistics */}
 
-      {/* Services */}
+      <Box
+        sx={{
+          height: "250px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <StatisticsCard num={5000} title="مشترك" />
+        <StatisticsCard num={20} title="باقة" />
+        <StatisticsCard num={10} title="ساعة عمل" />
+        <StatisticsCard num={354} title="موعد" />
+      </Box>
 
-      <Container sx={{ margin: "0 auto", color: "secondary.main" }}>
-        <Typography variant="h4" gutterBottom sx={{ padding: "20px 0" }}>
-          الخدمات
-        </Typography>
-        <Grid container spacing={8}>
-          {Services.map((service) => (
-            <Grid
-              size={{ xs: "none", md: 4 }}
-              spacing={{ xs: 2, md: 3 }}
-              columns={{ xs: 4, sm: 8, md: 12 }}
-            >
-              <ServiceCard
-                key={service.id}
-                icon={service.icon}
-                title={service.title}
-                discription={service.discription}
-              ></ServiceCard>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      {/* Services */}
+      {/* Statistics */}
 
       {/* Reviews */}
       <Container sx={{ color: "secondary.main" }}>

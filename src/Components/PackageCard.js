@@ -2,7 +2,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import CheckIcon from "@mui/icons-material/Check";
 import { Box, Card, Typography, Button } from "@mui/material";
 
-export default function DevicePackages({ num, name, details, price }) {
+export default function PackageCard({ num, name, details, price }) {
   return (
     <Card
       sx={{
@@ -58,6 +58,7 @@ export default function DevicePackages({ num, name, details, price }) {
       >
         <Typography variant="h3">{price}</Typography>
         <Button
+        className="adding-to-cart"
           sx={{
             backgroundColor: "secondary.main",
             color: "white",

@@ -3,6 +3,12 @@ const theme = createTheme({
   typography: {
     fontFamily: "Almarai",
     fontSize: 18,
+        h2: {
+      fontWeight: 600,
+      fontSize: "20px",
+      //  color: "#06363D",
+      // backgroundColor:'#DEEDEC'
+    },
     h3: {
       fontWeight: 700,
       fontSize: "28px",
@@ -22,12 +28,7 @@ const theme = createTheme({
       fontWeight: 400,
       fontSize: 20,
     },
-    h2: {
-      fontWeight: 600,
-      fontSize: "20px",
-      //  color: "#06363D",
-      // backgroundColor:'#DEEDEC'
-    },
+
   },
   components: {
     MuiSelect: {
