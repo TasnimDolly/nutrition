@@ -176,6 +176,7 @@ export default function Bar() {
                   <AccountCircle />
                 </IconButton>
               </RouterLink>
+              <RouterLink to="/cart" style={{ color: "inherit" }}>
               <IconButton
                 size="large"
                 aria-label="shoppingcart"
@@ -185,7 +186,8 @@ export default function Bar() {
                 <Badge badgeContent={4} color="primary">
                   <ShoppingCartIcon fontSize="small" />
                 </Badge>
-              </IconButton>
+                </IconButton>
+                </RouterLink>
               <RouterLink to="/notifications" style={{ color: "inherit" }}>
                 <IconButton
                   size="large"

@@ -13,6 +13,8 @@ import NutritionalPackages from "./Components/NutritionalPackages.js";
 import DevicePackages from "./Components/DevicePackages.js";
 import InjectionPackages from "./Components/InjectionPackages.js";
 import Products from "./Components/Products.js";
+import Cart from "./Components/Cart.js";
+import Workshops from "./Components/Workshops.js";
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -38,7 +40,9 @@ function App() {
           {/* //for hanooooon  */} {/* ولك كبييييرة */}
           {/*يا ويلكممممممممممممممممممممممممم كم حنون عنا */}
           {/* <Route path="/Products" element={<Products/>} /> */}
-          {/* <Route path="/Workshops" element={<Workshops/>} /> */}
+          <Route path="/cart" element={<Cart />} />
+
+          <Route path="/Workshops" element={<Workshops/>} />
         </Routes>
       </ThemeProvider>
     </div>
