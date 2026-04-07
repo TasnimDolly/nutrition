@@ -4,7 +4,6 @@ import "../Home.css";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
@@ -22,11 +21,9 @@ import NutritionMap from "./NutritionMap";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ScienceIcon from "@mui/icons-material/Science";
 import HomeIcon from "@mui/icons-material/Home";
-import location from "../imgs/Location.jpg";
 import FlatwareIcon from "@mui/icons-material/Flatware";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import clinic from "../imgs/clinic.jpg";
-import { IconButton } from "@mui/material";
 //imgs
 
 export default function Home() {
@@ -298,7 +295,7 @@ export default function Home() {
         variant="h4"
         gutterBottom
         sx={{
-          padding: "16px 90px",
+          padding: { xs: "16px 20px", md: "16px 90px" },
           textAlign: "right",
           color: "secondary.main",
         }}

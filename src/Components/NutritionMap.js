@@ -2,19 +2,15 @@ import { Button } from "@mui/material";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 // Fixing the default icon issue in Leaflet
 import L from "leaflet";
+import locationicon from "../imgs/locationicon.png";
 
 const nutritionPosition = [35.12772535754392, 36.76750597479324];
 
 const nutritionIcon = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-  iconRetinaUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [32, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
+  iconUrl: locationicon,
+  iconSize: [38, 38],
+  iconAnchor: [19, 38],
+  popupAnchor: [1, -38],
 });
 
 const openDirections = () => {
