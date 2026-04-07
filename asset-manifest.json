@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/nutrition/static/css/main.e3876599.css",
-    "main.js": "/nutrition/static/js/main.37365ea7.js",
+    "main.js": "/nutrition/static/js/main.ac881041.js",
     "static/js/453.4105e6c7.chunk.js": "/nutrition/static/js/453.4105e6c7.chunk.js",
     "static/media/Contact.png": "/nutrition/static/media/Contact.1bc66c92fe8cd0b97d3b.png",
     "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
     "static/media/postimg.png": "/nutrition/static/media/postimg.22cb0b3c5c5d5bd25632.png",
     "static/media/packagesbg.png": "/nutrition/static/media/packagesbg.c5ffb32cd67f9dc6800a.png",
     "static/media/clinic.jpg": "/nutrition/static/media/clinic.2ec3c4fa3b8ac9b975f4.jpg",
-    "static/media/Location.jpg": "/nutrition/static/media/Location.086a3faa809667c2bb31.jpg",
     "static/media/product8.png": "/nutrition/static/media/product8.f18db1c85bc8a1c6e9f8.png",
     "static/media/product3.png": "/nutrition/static/media/product3.a8474286352b40a7c9ce.png",
     "static/media/login.png": "/nutrition/static/media/login.217e3e8264d2f223bad6.png",
@@ -23,6 +22,7 @@
     "static/media/Almarai-Regular.ttf": "/nutrition/static/media/Almarai-Regular.4d8fe12612ad34e16602.ttf",
     "static/media/product1.png": "/nutrition/static/media/product1.1d2ce4a189940f7ecc5d.png",
     "static/media/Almarai-Light.ttf": "/nutrition/static/media/Almarai-Light.e91bfa6b2938b4255992.ttf",
+    "static/media/locationicon.png": "/nutrition/static/media/locationicon.0f8e9c111ba998594db9.png",
     "static/media/forgetpassword.png": "/nutrition/static/media/forgetpassword.8199a89ea9dff186f9de.png",
     "static/media/createaccount.png": "/nutrition/static/media/createaccount.d07bb6a48691ff304d9f.png",
     "static/media/product4.png": "/nutrition/static/media/product4.f1da86aa0b81b626c199.png",
@@ -36,11 +36,11 @@
     "static/media/Syriatelcash.png": "/nutrition/static/media/Syriatelcash.98ca1eeffda4a37e0590.png",
     "index.html": "/nutrition/index.html",
     "main.e3876599.css.map": "/nutrition/static/css/main.e3876599.css.map",
-    "main.37365ea7.js.map": "/nutrition/static/js/main.37365ea7.js.map",
+    "main.ac881041.js.map": "/nutrition/static/js/main.ac881041.js.map",
     "453.4105e6c7.chunk.js.map": "/nutrition/static/js/453.4105e6c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3876599.css",
-    "static/js/main.37365ea7.js"
+    "static/js/main.ac881041.js"
   ]
 }
