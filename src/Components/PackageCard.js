@@ -7,13 +7,14 @@ export default function PackageCard({ num, name, details, price }) {
     <Card
       sx={{
         width: "300px",
-        height: "430px",
+        height: "440px",
         display: "flex",
         flexDirection: "column",
         padding: "30px",
         borderRadius: "20px",
         border: "1px solid #E0E0E0",
         "&:hover": {
+          transition: "0.3s",
           borderTop: "5px solid #06363D !important",
         },
       }}
@@ -41,7 +42,7 @@ export default function PackageCard({ num, name, details, price }) {
             display="flex"
             gap={"10px"}
             alignItems="right"
-            sx={{ marginBottom: "5px",textAlign:'right' }}
+            sx={{ marginBottom: "5px", textAlign: "right" }}
           >
             <CheckIcon />
             <Typography variant="body1">{detail}</Typography>
@@ -58,7 +59,7 @@ export default function PackageCard({ num, name, details, price }) {
       >
         <Typography variant="h3">{price}</Typography>
         <Button
-        className="adding-to-cart"
+          className="adding-to-cart"
           sx={{
             backgroundColor: "secondary.main",
             color: "white",

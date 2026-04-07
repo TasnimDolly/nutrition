@@ -7,8 +7,6 @@ import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-// import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartOutlined";

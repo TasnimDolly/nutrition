@@ -1,4 +1,5 @@
 import "./App.css";
+import "leaflet/dist/leaflet.css";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import { Route, Routes } from "react-router-dom";

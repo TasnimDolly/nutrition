@@ -16,6 +16,7 @@ import Bar from "./Bar";
 import Foot from "./Foot";
 import StatisticsCard from "./StatisticsCard";
 import ServiceCard from "./ServiceCard";
+import NutritionMap from "./NutritionMap";
 
 //imgs
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -151,7 +152,7 @@ export default function Home() {
         sx={{
           marginTop: "140px",
           backgroundColor: "secondary.main",
-          height: {xs: "fit-content", md: "700px"},
+          height: { xs: "fit-content", md: "700px" },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -190,7 +191,7 @@ export default function Home() {
           <Typography sx={{ marginBottom: "20px" }}>
             - أستاذة في كلية التغذية جامعة حمص
           </Typography>
-            <hr width="70%" />
+          <hr width="70%" />
           <Typography sx={{ marginBottom: "20px" }}>
             نحن نؤمن بأن كل شخص يمكنه تحسين نمط حياته لذلك نقدم:
           </Typography>
@@ -304,12 +305,7 @@ export default function Home() {
       >
         موقعنا الحالي
       </Typography>
-
-      <img
-        src={location}
-        alt="location"
-        style={{ width: "100%", height: "100%" }}
-      ></img>
+      <NutritionMap />
       {/* location */}
       <Foot />
     </>

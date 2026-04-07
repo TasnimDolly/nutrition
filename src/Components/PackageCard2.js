@@ -3,11 +3,6 @@ import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import CheckIcon from "@mui/icons-material/Check";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
 export default function PackageCard2({
   num,
@@ -28,6 +23,7 @@ export default function PackageCard2({
         borderRadius: "20px",
         border: "1px solid #E0E0E0",
         "&:hover": {
+          transition: "0.3s",
           borderTop: "5px solid #06363D !important",
         },
       }}
