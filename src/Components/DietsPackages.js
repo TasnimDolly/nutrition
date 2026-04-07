@@ -10,7 +10,7 @@ import photo from "../imgs/packagesbg.png";
 import PackageCard from "./PackageCard";
 
 const questionsArray = [
-    {
+  {
     id: 0,
     question: "  بدي أنحف بسرعة؟",
     answer: " منفهم رغبتك بس النزول الصحي هو اللي بيستمر وبيدعم عافية الجسم.",
@@ -59,13 +59,12 @@ const questionsArray = [
     question: " كل كم مراجعة؟",
     answer: "غالبًا كل 2–4 أسابيع حسب حالتك واستجابتك",
   },
-    {
+  {
     id: 9,
     question: " ما بحب الخضار؟",
     answer:
       "منقدر نلاقي بدائل ونحضّرها بطريقة تناسبك، المهم نلاقي حل مناسب الك ولحالتك.",
   },
-  
 ];
 
 const Nquestions = questionsArray.map((q) => (
@@ -145,7 +144,7 @@ export default function NutritionalPackages() {
           تقنيات التنحيف وأجهزة تحسين القوام
         </Typography>
 
-        <Grid container>
+        <Grid container spacing={2}>
           <Grid size={{ xs: 12, lg: 8 }}>
             <Container
               sx={{
@@ -173,7 +172,7 @@ export default function NutritionalPackages() {
             justifyContent="center"
             alignItems="center"
           >
-            <img src={photo} alt="clinic"></img>
+            <img src={photo} alt="clinic" style={{width:"120%"}}></img>
           </Grid>
         </Grid>
         <FrequentlyAskedQuestions

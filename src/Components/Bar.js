@@ -106,26 +106,18 @@ export default function Bar() {
                     >
                       <RouterLink
                         style={{ color: "#06363D", textDecoration: "none" }}
-                        to="/NutritionalPackages"
+                        to="/DietsPackages"
                       >
                         <MenuItem onClick={handleClosePackagesMenu}>
-                          باقات استشارة تغذية
+                          باقات حميات صحية
                         </MenuItem>
                       </RouterLink>
                       <RouterLink
                         style={{ color: "#06363D", textDecoration: "none" }}
-                        to="/InjectionPackages"
+                        to="/TreatmentPackages Packages"
                       >
                         <MenuItem onClick={handleClosePackagesMenu}>
-                          باقات الحقونات
-                        </MenuItem>
-                      </RouterLink>
-                      <RouterLink
-                        style={{ color: "#06363D", textDecoration: "none" }}
-                        to="/DevicePackages Packages"
-                      >
-                        <MenuItem onClick={handleClosePackagesMenu}>
-                          باقات الاجهزة
+                          باقات إجراءات علاجية
                         </MenuItem>
                       </RouterLink>
                     </Popover>
@@ -175,17 +167,17 @@ export default function Bar() {
                 </IconButton>
               </RouterLink>
               <RouterLink to="/cart" style={{ color: "inherit" }}>
-              <IconButton
-                size="large"
-                aria-label="shoppingcart"
-                color="inherit"
-                sx={{ "&:hover": { color: "text.hover" } }}
-              >
-                <Badge badgeContent={4} color="primary">
-                  <ShoppingCartIcon fontSize="small" />
-                </Badge>
+                <IconButton
+                  size="large"
+                  aria-label="shoppingcart"
+                  color="inherit"
+                  sx={{ "&:hover": { color: "text.hover" } }}
+                >
+                  <Badge badgeContent={4} color="primary">
+                    <ShoppingCartIcon fontSize="small" />
+                  </Badge>
                 </IconButton>
-                </RouterLink>
+              </RouterLink>
               <RouterLink to="/notifications" style={{ color: "inherit" }}>
                 <IconButton
                   size="large"
@@ -251,7 +243,7 @@ export default function Bar() {
                             backgroundColor: "secondary.main",
                             boxShadow: "none",
                             color: "inherit",
-                            margin:"-10px 0 0"
+                            margin: "-10px 0 0",
                           }}
                         >
                           <AccordionSummary
@@ -282,10 +274,10 @@ export default function Bar() {
                                 color: "inherit",
                                 textDecoration: "none",
                               }}
-                              to="/NutritionalPackages"
+                              to="/DietsPackages"
                             >
                               <MenuItem onClick={toggleDrawer(true)}>
-                                باقات استشارة تغذية
+                                باقات حميات صحية
                               </MenuItem>
                             </RouterLink>
                             <RouterLink
@@ -293,21 +285,10 @@ export default function Bar() {
                                 color: "inherit",
                                 textDecoration: "none",
                               }}
-                              to="/InjectionPackages"
+                              to="/TreatmentPackages Packages"
                             >
                               <MenuItem onClick={toggleDrawer(true)}>
-                                باقات الحقونات
-                              </MenuItem>
-                            </RouterLink>
-                            <RouterLink
-                              style={{
-                                color: "inherit",
-                                textDecoration: "none",
-                              }}
-                              to="/DevicePackages Packages"
-                            >
-                              <MenuItem onClick={toggleDrawer(true)}>
-                                باقات الاجهزة
+                                باقات إجراءات علاجية
                               </MenuItem>
                             </RouterLink>
                           </AccordionDetails>
