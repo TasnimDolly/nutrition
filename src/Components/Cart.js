@@ -99,11 +99,14 @@ export default function Cart() {
             alignItems: "center",
             justifyContent: "center",
           }}
+
         >
-          <Grid item size={4.5}>
+          <Grid className='cart-grid'
+         item size={{ md: 4.5, xs: 11 }} >
             <img src={depofproducts} className="imgofproductsdep" />
           </Grid>
-          <Grid item size={5.5}>
+          <Grid item 
+         className='cart-grid' size={{md:5.5 , xs:12}} >
             {cartcontent.map((product) => (
               <Stack
                 direction="row"
@@ -191,7 +194,13 @@ export default function Cart() {
               </Stack>
             ))}
           </Grid>
-          <Grid item size={3} sx={{marginBottom:'10px'}}>
+          <Grid sx={{
+            '@media (min-width:900px) and (max-width:1200px)': {
+              flexBasis: '100%',
+              // maxWidth: '100%'
+            }
+          }} item  className='cart-grid' size={{md:4 , xs:12}} 
+          >
             <Stack
               direction="column"
               alignItems="center"
@@ -211,7 +220,7 @@ export default function Cart() {
                   gap: "10px",
                 }}
               >
-                <Typography variant="h2" sx={{ textAlign: "right" }}>
+                <Typography variant="h2" sx={{ textAlign: "center" }}>
                   ملخص الطلب{" "}
                 </Typography>
                 {/* {orderdetails.map((order)=>{

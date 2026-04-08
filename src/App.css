@@ -73,6 +73,9 @@
     transform: rotate(360deg);
   }
 }
+.contactPage .icon{
+font-size: 30px;
+}
 .productspage .MuiButtonGroup-middleButton {
   border: 1px solid currentColor;
 }
@@ -94,7 +97,7 @@
 .workshopspage .card{
   background:#DCECF0;
   box-shadow:6px 7px 15px 3px #00000040;
-  max-width: 345px ;
+  max-width: 400px ;
   /* padding:10px; */
   transition: 0.3s ;
   border:10px solid transparent;
@@ -108,17 +111,17 @@
 border-radius: 40px;
 }
 .workshopspage{
-    background-color: #A0D7E299;
+    background-color: #FFFFFF;
     /* padding: 0; */
 }
 .MuiDivider-root::after,.MuiDivider-root::before{
 border-bottom:3px solid #5baf96}
 .workshopspage .closed{
 opacity: 0.5;
-  max-width: 345px ;
+  max-width: 400px ;
   background:#DCECF0;
   box-shadow:6px 7px 15px 3px #00000040;
-  max-width: 345px ;
+  max-width: 400px ;
   /* padding:10px; */
   transition: 0.3s ;
   border:10px solid transparent;
@@ -127,11 +130,7 @@ filter: grayscale(80%);
 
 
 }
-.cartpage {
-    background-color: #A0D7E299;
-/* padding:10px ; */
 
-}
 .cartpage .imgofproductsdep{
 width:500px;
 height:600px;
@@ -147,3 +146,10 @@ border-radius: 10px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
     z-index: 10;
 }
+.cartpage .cart-grid{
+  @media (min-width:900px) and (max-width:1200px) {
+              flex-basis: 100%;
+              max-width: 100%
+            }
+}
+

@@ -3,6 +3,14 @@ import { useState } from "react";
 import logoimg from '../imgs/productsLogo.png'
 import Grid from "@mui/material/Grid";
 import Foot from "./Foot";
+import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
+import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
+
+import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
+import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -34,137 +42,146 @@ import { Component } from "react";
 import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import { InputLabel } from "@mui/material";
 export default function Products() {
-    // const quantiy = 1;
-  const [isactive, setisactive] = useState('')
-  const [visible, setVisible] = useState(6);
-  const productsarr = [
-      {
-      id: 1,
-      img:  img1 ,
-      price:'15$'
-      
-      
-    },    {
-      id: 2,
-      img:  img2 ,
-      price:'15$'
-      
-      
-    },    {
-      id: 3,
-      img:  img3 ,
-      price:'15$'
-      
-      
-    },    {
-      id: 4,
-      img:  img4 ,
-      price:'15$'
-      
-      
-    },    {
-      id: 5,
-      img:  img5 ,
-      price:'15$'
-      
-      
-    },    {
-      id: 6,
-      img:  img6 ,
-      price:'15$'
-      
-      
-    },
-        {
-      id: 7,
-      img:  img7 ,
-      price:'15$'
-      
-      
-    }
-        ,    {
-      id: 8,
-      img:  img8 ,
-      price:'15$'
-      
-      
-    }
-        ,    {
-      id: 9,
-      img:  img9 ,
-      price:'15$'
-      
-      
-    }
-        ,    {
-      id: 10,
-      img:  img10 ,
-      price:'15$'
-      
-      
-    }       ,    {
-      id: 11,
-      img:  img11 ,
-      price:'15$'
-      
-      
-    }       ,    {
-      id: 9,
-      img:  img12 ,
-      price:'15$'
-      
-      
-    }
 
-  ]
-  let products = productsarr.slice(0,visible).map((product) => { 
+ 
+  const [visible, setVisible] = useState(6);
+   const [type,setType]=useState('')
+   const [quantity,setQuantity]=useState('')
+  const [price, setPrice] = useState('')
+  const [anchorElType, setAnchorElType] = useState(null);
+  const [anchorElQuantity, setAnchorElQuantity] = useState(null);
+  const [anchorElPrice, setAnchorElPrice] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('');
+    const productsarr = [
+      {
+        id: 1,
+        img: img1,
+        price: '15$'
+      ,type:''
+
+      ,
+      name:'اسم المنتج'
+      }, {
+        id: 2,
+        img: img2,
+        price: '15$'
+            ,type:''
+,
+      name:'اسم المنتج'
+      
+      }, {
+        id: 3,
+        img: img3,
+        price: '15$'
+            ,type:'',
+ name:'اسم المنتج'
+      
+      }, {
+        id: 4,
+        img: img4,
+        price: '15$'
+            ,type:''
+,
+      name:'اسم المنتج'
+      
+      }, {
+        id: 5,
+        img: img5,
+        price: '15$'
+            ,type:''
+,
+      name:'اسم المنتج'
+      
+      }, {
+        id: 6,
+        img: img6,
+        price: '15$'
+      ,type:''
+      ,
+      name:'اسم المنتج'
+      },
+      {
+        id: 7,
+        img: img7,
+        price: '15$'
+            ,type:''
+
+      ,
+      name:'اسم المنتج'
+      }
+      , {
+        id: 8,
+        img: img8,
+        price: '15$'
+      ,
+      name:'اسم المنتج'
+      ,type:''
+      }
+      , {
+        id: 9,
+        img: img9,
+        price: '15$'
+      ,
+      name:'اسم المنتج'
+      
+      }
+      , {
+        id: 10,
+        img: img10,
+        price: '15$'
+        , type: '',
+      name:'اسم المنتج'
+      
+      }, {
+        id: 11,
+        img: img11,
+        price: '15$'
+      ,type:'',
+      name:'اسم المنتج'
+      
+      }, {
+        id: 9,
+        img: img12,
+        price: '15$'
+      ,type:''
+      ,
+      name:'اسم المنتج'
+      }
+
+    ]
+    let products = productsarr.slice(0, visible).map((product) => {
       return (
       
-        <Grid item size={4} key={product.id}>
-          <Card sx={{ maxWidth: 345, borderRadius: 5, backgroundColor: '#d6f4f9' }}>
+        <Grid item size={{md:4 ,sm:6, xs:12}}  key={product.id}>
+          <Card sx={{ maxWidth: 400, borderRadius: 5, backgroundColor: '#d6f4f9' ,boxShadow:'2px 3px 10px 0px #000000'}}>
             <CardMedia className="card"
               component="img"
               image={product.img}
-                sx={{
-    height: 300,        
-    objectFit: "cover", 
+              sx={{
+                height: 300,
+                objectFit: "cover",
 
-  }}
+              }}
             />
             <CardContent>
+               <Typography variant="h2" gutterBottom sx={{ textAlign: 'center',marginBottom:'20px' }}>
+               {product.name}
+              </Typography>
               <Typography gutterBottom sx={{ textAlign: 'center' }}>
-                السعر {product.price} 
+                السعر {product.price}
               </Typography>
     
             </CardContent>
-            <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
               {/* <Stack direction='row' justifyContent='space-between' spacing={10}> */}
               <Button variant="contained" sx={{
                 boxShadow: '0px 4px 4px 0px #00000040',
                 backgroundColor: (theme) => theme.palette.text.skyblue,
+              
               }} >اضافة للسلة</Button>
-              <Select className="select"
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={1}
-                label="Age"
-                IconComponent={ExpandMoreIcon}
-                variant="filled" 
-              sx={{  width: 60,
-    height: 45,
-    backgroundColor: "#289EA9",
-    color: "white",
-                borderRadius: "10px",
-             boxShadow:' 4px 5px 5px 0px #00000040'
-  }}
-                >
-                <MenuItem value={1}>1</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
-                <MenuItem value={4}>4</MenuItem>
-                <MenuItem value={5}>5</MenuItem>
-              </Select>
+
                         
             </CardActions>
           </Card>
@@ -173,17 +190,17 @@ export default function Products() {
 
       )
     
-  })
+    })
 
   
     return (
-        <div className='productspage'style={{ background:'#A0D7E2' }}>
+      <div className='productspage' style={{ background: '#FFFFFF' }}>
             
-            <Bar />
+        <Bar />
               
-            <Stack direction='row' justifyContent='space-between' alignItems='baseline' sx={{paddingLeft:5,margin:10}}> 
-         <TextField
-                    
+        <Stack direction={{ xs: 'column', sm: 'row' }}  justifyContent='space-between' alignItems='baseline' sx={{ paddingLeft: 5, margin: 10 }}>
+          <TextField
+                  
             className="textfield"
             label="بحث عن اسم المنتج"
 
@@ -197,57 +214,79 @@ export default function Products() {
                 ),
               },
             }}
-            variant="standard" sx={{ '&': { marginTop: 0 } }}
-                />
-          <Box   display='flex' gap={1} >
+            variant="standard" sx={{ '&': { marginTop: 0 }, backgroundColor: 'white', borderRadius: 10 }}
+          />
+          <Box display='flex' gap={1}  marginTop={{ xs: 10}}  >
         
-        <Button className='filterbox' variant={isactive == 'snacks' ? 'contained' : 'outlined'} onClick={() => { setisactive('snacks'); }} >
-               <Typography variant="h2" >
-                سناكات صحية
-            </Typography></Button>
-            <Button className='filterbox' variant={isactive == 'healthy' ? 'contained' : 'outlined'} onClick={() => { setisactive('healthy'); }} >
-               <Typography variant="h2" >
-                عشبية صحية
-            </Typography></Button>
-            <Button  className='filterbox' variant={isactive == 'tools' ? 'contained' : 'outlined'} onClick={() => { setisactive('tools') }}>
-               <Typography variant="h2" >
-              ادوات صحية</Typography></Button>
-            {/* <Button  className='filterbox' variant={isactive == 'quantity' ? 'contained' : 'outlined'} onClick={() => { setisactive('quantity') }}>
-              
-               <Typography variant="h2" >
-              
-              حسب المخزون</Typography></Button> */}
-            <Button  className='filterbox' variant={isactive == 'price' ? 'contained' : 'outlined'} onClick={() => { setisactive('price') }}>
-               <Typography variant="h2" >حسب السعر</Typography>
-        </Button>
-         <Button className='filterbox' variant ={isactive=='all' ? 'contained' : 'outlined'} onClick={()=>{setisactive('all')}}><Typography variant="h2">الكل</Typography></Button>
-        
-      </Box>
-      
-            </Stack>
-          <Container maxWidth='lg' >
-            <Grid  container spacing={4} sx={{marginTop:10}} alignItems='center'>
-            { products}
+       
+            <Button variant={activeFilter=='type' ? 'contained' : 'outlined'} onClick={(e) => {
+              setAnchorElType(e.currentTarget);
+              setActiveFilter('type')
+            }
+            }>حسب النوع</Button>
+          
+          <Menu anchorEl={anchorElType}
+            open={Boolean(anchorElType)}
+            onClose={()=>{setAnchorElType(null)}
+          }>
+            <MenuItem  onClick={()=>{setType('snacks'); setAnchorElType(null)}}>سناكات صحية</MenuItem>
+            <MenuItem onClick={()=>{setType('herpal'); setAnchorElType(null)}}>عشبية صحية</MenuItem>
+            <MenuItem onClick={()=>{setType('tools'); setAnchorElType(null)}}>ادوات صحية</MenuItem>
+            </Menu>
+            <Button variant={activeFilter=='quantity' ? 'contained' : 'outlined'} onClick={(e) => {
+              setAnchorElQuantity(e.currentTarget); 
+              setActiveFilter('quantity')
+            }}>حسب المخزون</Button>
+
+               <Menu anchorEl={anchorElQuantity}
+            open={Boolean(anchorElQuantity)}
+            onClose={()=>{setAnchorElQuantity(null)}
+          }>
+            <MenuItem onClick={()=>{setQuantity(true); setAnchorElQuantity(null)}}>متوفر</MenuItem>
+            <MenuItem onClick={()=>{setQuantity(false); setAnchorElQuantity(null)}}>غير متوفر</MenuItem>
+            </Menu>
+            <Button variant={activeFilter =='price'? 'contained' : 'outlined'} onClick={(e) => {
+              setAnchorElPrice(e.currentTarget); 
+              setActiveFilter('price')
+
+            }}>حسب السعر</Button>
+
+            <Menu anchorEl={anchorElPrice}
+              open={Boolean(anchorElPrice)}
+              onClose={() => {
+                setAnchorElPrice(null);
+             
+              }}
+            >
+              <MenuItem onClick={()=>{setPrice('asc'); setAnchorElPrice(null)}}>من الاعلى للادنى</MenuItem>
+              <MenuItem onClick={()=>{setPrice('desc'); setAnchorElPrice(null)}}>من الاقل للاعلى</MenuItem>
+            </Menu>
+            </Box>
+        </Stack>
+        <Container maxWidth='lg' >
+          <Grid container spacing={4} sx={{ marginTop: 10 }} alignItems='center'>
+            {products}
           </Grid>
-          <Button  
-                     variant="contained"  color={"primary"} sx={{margin:5}} disabled={visible >= productsarr.length } onClick={() => { setVisible(visible + 6);}}>
-  عرض المزيد
+          <Button
+            variant="contained" color={"primary"} sx={{ margin: 5 }} disabled={visible >= productsarr.length} onClick={() => { setVisible(visible + 6); }}>
+            عرض المزيد
           </Button>
           
         
-                <Box sx={{margin:'20px 0px',background:'#DCECEF',padding:2,borderRadius:6,boxShadow:' 4px 5px 5px 0px #00000040'
-}} display='flex' justifyContent='space-between' alignItems='center'>
-                    <Typography variant="h4" sx={{textAlign:'right'}}> احصل على خصومات عند طلب المنتجات !</Typography>
-               <img src={logoimg}></img>
-                </Box>
-               </Container>
+          <Box sx={{
+            margin: '20px 0px', background: '#DCECEF', padding: 2, borderRadius: 6, boxShadow: ' 4px 5px 5px 0px #00000040'
+          }} display='flex' justifyContent='space-between' alignItems='center'>
+            <Typography variant="h4" sx={{ textAlign: 'right' }}> احصل على خصومات عند طلب المنتجات !</Typography>
+            <img src={logoimg}></img>
+          </Box>
+        </Container>
 
 
 
 
-                <Foot />
-        </div>
+        <Foot />
+      </div>
         
     )
-
-}
+  
+  }

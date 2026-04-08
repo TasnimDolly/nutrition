@@ -28,12 +28,14 @@ export default function LoginLayout({ children, img, backTo }) {
               <Grid item xs={6}>
                 <Box sx={{ textAlign: "left" }}>
                   <Link to={backTo}>
-                    <IconButton>
+                    <IconButton sx={{display:{xs:'none',md:'inline-flex'}}}>
                       <KeyboardReturnIcon sx={{ color: "primary.main" }} />
                     </IconButton>
                   </Link>
                 </Box>
-                <img src={img} alt="" />
+                <Box display={{xs:'none',md:'block'}}>
+                  <img src={img} alt="" />
+                  </Box>
               </Grid>
             </Grid>
           </CardContent>

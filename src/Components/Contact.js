@@ -1,5 +1,3 @@
-import "../contact.css";
-import contactimg from "../imgs/Contact.png";
 import Bar from "./Bar";
 import Foot from "./Foot";
 import Grid from "@mui/material/Grid";
@@ -16,8 +14,8 @@ export default function Contact() {
   return (
     <>
       <Bar />
-      <Stack className="contactPage" sx={{ backgroundColor: "primary.bg" }}>
-        <img src={contactimg} alt="" />
+      <Stack className="contactPage" sx={{ }}>
+       
         <Typography
           sx={{ fontSize: 28, margin: "40px 40px 0px 0px", fontWeight: "bold" ,textAlign:"right"}}
           color="text.dark"
@@ -36,24 +34,24 @@ export default function Contact() {
             نحن هنا لمساعدتك تواصل معنا عبر هذا النموذج أو عبر الإتصال مباشرة
           </Typography>
           <Stack
-            direction="row"
+            direction={{xs:'column',sm:'column',md:'row'}}
             justifyContent="space-between"
             sx={{ marginTop: "46px" }}
           >
-            <Typography
-              sx={{ display: "flex", alignItems: "center", fontSize: "24px" }}
+            <Typography fontSize={{ xs:22, sm:24 }}
+              sx={{ marginBottom:10,display: "flex", alignItems: "center", }}
             >
               <LocalPhoneIcon className="icon" />
               الهاتف : 0960093305
             </Typography>
-            <Typography
-              sx={{ display: "flex", alignItems: "center", fontSize: "24px" }}
+            <Typography fontSize={{ xs:22, sm:24 }}
+              sx={{ marginBottom:10,display: "flex", alignItems: "center"}}
             >
               <LocationPinIcon className="icon" />
-              سوريا-حماة-ساحة العاصي
+              سوريا- حماة - الشريعة - دوار البغدادي
             </Typography>
-            <Typography
-              sx={{ display: "flex", alignItems: "center", fontSize: "24px" }}
+            <Typography fontSize={{ xs:22, sm:24 }}
+              sx={{ marginBottom:10,display: "flex", alignItems: "center", }}
             >
               <EmailIcon className="icon" />
               البريد الإلكتروني: Salammuty@gmail.com
@@ -62,7 +60,7 @@ export default function Contact() {
           <form>
             <Stack direction="column" alignItems="center">
               <Grid container spacing={2}>
-                <Grid item size={6}>
+                <Grid item size={{md:6 ,sm:6, xs:12}} >
                   <TextField
                     fullWidth
                     className="textfield"
@@ -85,7 +83,7 @@ export default function Contact() {
                     variant="filled"
                   />
                 </Grid>
-                <Grid item size={6}>
+                <Grid item size={{md:6 ,sm:6, xs:12}} >
                   <TextField
                     fullWidth
                     className="textfield"
@@ -108,7 +106,7 @@ export default function Contact() {
                     variant="filled"
                   />
                 </Grid>
-                <Grid size={12} item>
+                <Grid size={{md:12 ,sm:12, xs:12}}  item>
                   <TextField
                     fullWidth
                     className="textfield"
@@ -131,7 +129,7 @@ export default function Contact() {
                     variant="filled"
                   />
                 </Grid>
-                <Grid size={12} item fullWidth>
+                <Grid size={{md:12 ,sm:12, xs:12}}  item fullWidth>
                   <TextField
                     multiline
                     row={4}

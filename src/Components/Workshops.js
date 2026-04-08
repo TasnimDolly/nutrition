@@ -338,7 +338,7 @@ export default function Workshops() {
   ];
   let posts = postsarr.slice(0, visiblePost).map((post) => {
     return (
-      <Grid item size={4} spacing={10} key={post.id}>
+    <Grid item size={{md:4 ,sm:6, xs:12}}  spacing={10} key={post.id}>
         <Card className="card">
           <Typography variant="h2" sx={{ margin: "10px" }}>
             {post.title}{" "}
@@ -373,7 +373,7 @@ export default function Workshops() {
 
   let events = eventsarr.slice(0, visibleEvent).map((event) => {
     return (
-      <Grid item size={4} spacing={4} key={event.id}>
+      <Grid item  size={{md:4 ,sm:6, xs:12}} spacing={4} key={event.id}>
         <Card className={event.status == "opened" ? "card" : "closed"}>
           <Typography variant="h2" sx={{ margin: "10px" }}>
             {event.title}
@@ -432,8 +432,8 @@ export default function Workshops() {
       </Typography>
       <Grid
         container
-        spacing={0}
-        sx={{ marginTop: 10, paddingRight: "40px" }}
+        spacing={4}
+        sx={{ marginTop: 10, padding: "20px" }}
         alignItems="center"
       >
         {events}
@@ -455,7 +455,7 @@ export default function Workshops() {
       <Grid
         container
         spacing={4}
-        sx={{ marginTop: 10, paddingRight: "40px" }}
+        sx={{ marginTop: 10, padding: "20px" }}
         alignItems="center"
       >
         {posts}
