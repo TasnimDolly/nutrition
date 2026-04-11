@@ -126,7 +126,7 @@ export default function Cart() {
                     display: "flex",
                     flexDirection: "row",
                     gap: "10px",
-                  }}
+                 }}
                 >
                   <img src={productimg1} />
                   <Box sx={{ textAlign: "right" }}>

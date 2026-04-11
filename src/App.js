@@ -15,6 +15,7 @@ import TreatmentPackages from "./Components/TreatmentPackages.js";
 import Products from "./Components/Products.js";
 import Cart from "./Components/Cart.js";
 import Workshops from "./Components/Workshops.js";
+import Booking from './Components/Booking.js'
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -42,6 +43,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
 
           <Route path="/Workshops" element={<Workshops/>} />
+          <Route path="/Booking" element={<Booking/>} />
         </Routes>
       </ThemeProvider>
     </div>

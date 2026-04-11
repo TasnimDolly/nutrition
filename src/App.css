@@ -153,3 +153,6 @@ border-radius: 10px;
             }
 }
 
+.bookingpage .MuiDayCalendar-weekDayLabel{
+  width: calc(100% / 7);
+}
