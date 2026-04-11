@@ -125,7 +125,7 @@ export default function Products() {
         price: '15$'
       ,
       name:'اسم المنتج'
-      
+      ,type:''
       }
       , {
         id: 10,

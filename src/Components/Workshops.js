@@ -378,7 +378,6 @@ export default function Workshops() {
           <Typography variant="h2" sx={{ margin: "10px" }}>
             {event.title}
           </Typography>
-
           <CardMedia component="img" height="500" image={eventimg1} />
           <CardContent>
             <Typography

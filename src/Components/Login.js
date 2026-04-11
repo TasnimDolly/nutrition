@@ -1,5 +1,5 @@
 import LoginLayout from "./LoginLayout";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import loginimg from "../imgs/login.png";
 // Mui Components
 import Button from "@mui/material/Button";
@@ -115,7 +115,10 @@ export default function Login() {
           >
             تسجيل الدخول{" "}
           </Button>
-
+<Link
+                        style={{ color: "#06363D", textDecoration: "none" }}
+                        to="/createaccount"
+                      >
           <Button
             sx={{
               width: "100%",
@@ -124,7 +127,8 @@ export default function Login() {
             variant="contained"
           >
             انشاء حساب{" "}
-          </Button>
+            </Button>
+            </Link>
         </form>
       </LoginLayout>
     </>

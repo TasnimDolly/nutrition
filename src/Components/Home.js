@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Rating from "@mui/material/Rating";
+import Booking from "./Booking";
 // mui library Component
 
 import { Link as RouterLink } from "react-router-dom";
@@ -27,6 +28,7 @@ import clinic from "../imgs/clinic.jpg";
 //imgs
 
 export default function Home() {
+  const loggedin = false;
   const Services = [
     {
       id: 1,
@@ -98,6 +100,7 @@ export default function Home() {
           >
             عيادة عافية وسلام
           </Typography>
+          <RouterLink to={loggedin ? '/booking' : '/login'}>
           <Button
             className="landing-button"
             sx={{
@@ -111,7 +114,8 @@ export default function Home() {
           >
             احجز موعدك الان
             <ArrowBackIcon />
-          </Button>
+            </Button>
+            </RouterLink>
         </Box>
       </Box>
 

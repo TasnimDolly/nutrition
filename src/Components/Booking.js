@@ -6,7 +6,10 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
+//imgs 
+import bookingform from "../imgs/bookingform.png";
 import syriatelcash from "../imgs/Syriatelcash.png";
+//imgs 
 import dayjs from "dayjs";
 //Calendar
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -42,16 +45,33 @@ export default function Booking() {
       <Bar />
       <Box>
         <Stack
-          direction="row"
+          direction="column"
           justifyContent="space-between"
           sx={{ padding: "20px", margin: "20px" }}
         >
           <Typography variant="h4" sx={{ textAlign: "right" }}>
             حجز المواعيد
-            <Typography variant="h2" sx={{ marginTop: 5, color: "#0D6F73" }}>
-              احجز الموعد المناسب لزيارتك القادمة واطلع على سياسات العيادة{" "}
+            <Typography variant="h4" sx={{ marginTop: 5, color: "#0D6F73" }}>
+              احجز الموعد المناسب لزيارتك القادمة {" "}
             </Typography>
           </Typography>
+           <Box
+              sx={{
+                boxShadow: "2px 0px 4px 4px #00000040",
+                backgroundColor: "#DCECF0",
+                color: "white",
+              padding: "10px",
+              borderRadius: "5px",
+              marginTop: "50px",
+              alignSelf:'center'
+              }}
+          >
+            <Typography variant="h2" sx={{ textAlign: "center", color: "#0D6F73" }}>
+    لُطفًا يرجى الاجابة عن هذا الاستبيان قبل حجز موعد استشارة!
+            </Typography>
+              <img width='300' height='300' src={bookingform} />
+
+            </Box>
         </Stack>
       </Box>
 
