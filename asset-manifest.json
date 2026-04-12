@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/nutrition/static/css/main.d9d01088.css",
-    "main.js": "/nutrition/static/js/main.5afb890d.js",
+    "main.css": "/nutrition/static/css/main.b149ec53.css",
+    "main.js": "/nutrition/static/js/main.dba7984d.js",
     "static/js/453.4105e6c7.chunk.js": "/nutrition/static/js/453.4105e6c7.chunk.js",
-    "static/media/Landing.svg": "/nutrition/static/media/Landing.71d35631f6040a822596.svg",
+    "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
+    "static/media/testsImg.png": "/nutrition/static/media/testsImg.b959203c538c9e68e821.png",
     "static/media/postimg.png": "/nutrition/static/media/postimg.22cb0b3c5c5d5bd25632.png",
     "static/media/packagesbg.png": "/nutrition/static/media/packagesbg.c5ffb32cd67f9dc6800a.png",
     "static/media/clinic.jpg": "/nutrition/static/media/clinic.2ec3c4fa3b8ac9b975f4.jpg",
@@ -35,12 +36,12 @@
     "static/media/cartproduct1.png": "/nutrition/static/media/cartproduct1.2f6b9f4efbd64c65175a.png",
     "static/media/Syriatelcash.png": "/nutrition/static/media/Syriatelcash.98ca1eeffda4a37e0590.png",
     "index.html": "/nutrition/index.html",
-    "main.d9d01088.css.map": "/nutrition/static/css/main.d9d01088.css.map",
-    "main.5afb890d.js.map": "/nutrition/static/js/main.5afb890d.js.map",
+    "main.b149ec53.css.map": "/nutrition/static/css/main.b149ec53.css.map",
+    "main.dba7984d.js.map": "/nutrition/static/js/main.dba7984d.js.map",
     "453.4105e6c7.chunk.js.map": "/nutrition/static/js/453.4105e6c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9d01088.css",
-    "static/js/main.5afb890d.js"
+    "static/css/main.b149ec53.css",
+    "static/js/main.dba7984d.js"
   ]
 }
