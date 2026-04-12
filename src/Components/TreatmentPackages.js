@@ -211,7 +211,7 @@ export default function DevicePackages() {
             justifyContent="center"
             alignItems="center"
           >
-            <img src={photo} alt="clinic" style={{width:"120%"}}></img>
+            <img src={photo} alt="clinic" style={{ width: "120%" }}></img>
           </Grid>
         </Grid>
         <Typography

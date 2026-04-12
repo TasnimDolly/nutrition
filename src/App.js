@@ -4,6 +4,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 import { Route, Routes } from "react-router-dom";
 import Home from "../src/Components/Home";
+import Test1 from "../src/Components/Test1.js";
+import Test2 from "../src/Components/Test2.js";
+import Test3 from "../src/Components/Test3.js";
 import ForgetPassword from "../src/Components/ForgetPassword.js";
 import ResetPassword from "../src/Components/ResetPassword.js";
 import Login from "../src/Components/Login.js";
@@ -15,7 +18,9 @@ import TreatmentPackages from "./Components/TreatmentPackages.js";
 import Products from "./Components/Products.js";
 import Cart from "./Components/Cart.js";
 import Workshops from "./Components/Workshops.js";
-import Booking from './Components/Booking.js'
+import Booking from "./Components/Booking.js";
+
+
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -23,27 +28,22 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
-          <Route path="/notifications" element={<Notifications />} />
-          {/* just now  */}
-          {/* <Route path="/" element={<ResetPassword />} /> */}
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} />
           <Route path="/r" element={<ResetPassword />} />
           <Route path="/createaccount" element={<CreateAccount />} />
-          <Route path="/Home" element={<Home />} />
-          <Route
-            path="/DietsPackages"
-            element={<DietsPackages />}
-          />
-          <Route path="/TreatmentPackages Packages" element={<TreatmentPackages />} />
-          <Route path="/Products" element={<Products />} />
-          {/* //for hanooooon  */} {/* ولك كبييييرة */}
-          {/*يا ويلكممممممممممممممممممممممممم كم حنون عنا */}
-          {/* <Route path="/Products" element={<Products/>} /> */}
           <Route path="/cart" element={<Cart />} />
-
-          <Route path="/Workshops" element={<Workshops/>} />
-          <Route path="/Booking" element={<Booking/>} />
+          <Route path="/notifications" element={<Notifications />} />
+          {/* just now  */}
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/test1" element={<Test1 />} />
+          <Route path="/test2" element={<Test2/>} />
+          <Route path="/test3" element={<Test3 />} />
+          <Route path="/DietsPackages" element={<DietsPackages />} />
+          <Route path="/TreatmentPackages" element={<TreatmentPackages />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/Workshops" element={<Workshops />} />
+          <Route path="/Booking" element={<Booking />} />
         </Routes>
       </ThemeProvider>
     </div>

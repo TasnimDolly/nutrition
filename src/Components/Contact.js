@@ -15,7 +15,6 @@ export default function Contact() {
     <>
       <Bar />
       <Stack className="contactPage" sx={{ }}>
-       
         <Typography
           sx={{ fontSize: 28, margin: "40px 40px 0px 0px", fontWeight: "bold" ,textAlign:"right"}}
           color="text.dark"

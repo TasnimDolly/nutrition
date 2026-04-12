@@ -7,7 +7,15 @@ import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
 export default function FRQuestion({ question, answer }) {
   return (
-    <Accordion sx={{ margin: "10px 0", width: "100%" }}>
+    <Accordion
+      sx={{
+        margin: "10px 0",
+        width: "100%",
+        "&:before": {
+          display: "none",
+        },
+      }}
+    >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1-content"
@@ -18,7 +26,7 @@ export default function FRQuestion({ question, answer }) {
           {question}
         </Typography>
       </AccordionSummary>
-      <AccordionDetails sx={{ color: "text.primary" , marginRight:"10px"}}>
+      <AccordionDetails sx={{ color: "text.primary", marginRight: "10px" }}>
         {answer}
       </AccordionDetails>
     </Accordion>

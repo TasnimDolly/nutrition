@@ -114,7 +114,7 @@ export default function Bar() {
                       </RouterLink>
                       <RouterLink
                         style={{ color: "#06363D", textDecoration: "none" }}
-                        to="/TreatmentPackages Packages"
+                        to="/TreatmentPackages"
                       >
                         <MenuItem onClick={handleClosePackagesMenu}>
                           باقات إجراءات علاجية

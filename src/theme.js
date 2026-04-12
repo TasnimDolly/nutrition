@@ -3,7 +3,7 @@ const theme = createTheme({
   typography: {
     fontFamily: "Almarai",
     fontSize: 18,
-        h2: {
+    h2: {
       fontWeight: 600,
       fontSize: "20px",
       //  color: "#06363D",
@@ -28,23 +28,16 @@ const theme = createTheme({
       fontWeight: 400,
       fontSize: 20,
     },
-
-    h2: {
-      fontWeight: 600,
-      fontSize: "20px",
-      //  color: "#06363D",
-      // backgroundColor:'#DEEDEC'
-    },
-     h5:{
-       fontWeight: 'normal',
-       color: '#777777',
-       fontSize:20
+    h5: {
+      fontWeight: "normal",
+      color: "#777777",
+      fontSize: 20,
     },
     price: {
-      color: '#289EA9'
-     }
+      color: "#289EA9",
+    },
   },
- 
+
   components: {
     MuiSelect: {
       styleOverrides: {

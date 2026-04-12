@@ -1,13 +1,20 @@
 import "../Home.css";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+//import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 // mui library Component
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Avatar from "@mui/material/Avatar";
-import Rating from "@mui/material/Rating";
-import Booking from "./Booking";
 // mui library Component
 
 import { Link as RouterLink } from "react-router-dom";
@@ -17,6 +24,8 @@ import Foot from "./Foot";
 import StatisticsCard from "./StatisticsCard";
 import ServiceCard from "./ServiceCard";
 import NutritionMap from "./NutritionMap";
+import ReviewsCard from "./ReviewsCard";
+import TestBox from "./TestBox";
 
 //imgs
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -59,14 +68,6 @@ export default function Home() {
     },
   ];
 
-  const circl = {
-    width: "18px",
-    height: "18px",
-    margin: "0 10px",
-    backgroundColor: " #289EA9",
-    borderRadius: "50%",
-  };
-
   return (
     <>
       {/* landing  */}
@@ -100,22 +101,22 @@ export default function Home() {
           >
             عيادة عافية وسلام
           </Typography>
-          <RouterLink to={loggedin ? '/booking' : '/login'}>
-          <Button
-            className="landing-button"
-            sx={{
-              backgroundColor: "secondary.main",
-              color: "white",
-              padding: "20px",
-              borderRadius: "50px",
-              "$:hover": { boxShadow: 16 },
-              gap: "10px",
-            }}
-          >
-            احجز موعدك الان
-            <ArrowBackIcon />
+          <RouterLink to={loggedin ? "/booking" : "/login"}>
+            <Button
+              className="landing-button"
+              sx={{
+                backgroundColor: "secondary.main",
+                color: "white",
+                padding: "20px",
+                borderRadius: "50px",
+                "$:hover": { boxShadow: 16 },
+                gap: "10px",
+              }}
+            >
+              احجز موعدك الان
+              <ArrowBackIcon />
             </Button>
-            </RouterLink>
+          </RouterLink>
         </Box>
       </Box>
 
@@ -259,40 +260,84 @@ export default function Home() {
       {/* Statistics */}
 
       {/* Reviews */}
-      <Container sx={{ color: "secondary.main" }}>
-        <Typography variant="h4" gutterBottom sx={{ padding: "20px 0" }}>
-          آراء المرضى
-        </Typography>
-        <Container>
-          <Avatar
-            sx={{ margin: "5px auto", width: "100px", height: "100px" }}
-            src="/broken-image.jpg"
+      <Typography variant="h4" gutterBottom sx={{ padding: "20px 0 15px" }}>
+        آراء المرضى
+      </Typography>
+      <Swiper
+        sx={{
+          width: "100%",
+        }}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <ReviewsCard
+            name="محمود حسن"
+            age="27 سنة"
+            review="عنجد هاد اللي عم ابحث عنه برنامج علاجي يحسنلي جهاز الهضم مو جدول فيه رز ودجاج وديتوكس 🥺
+غيرتيلي حياتي للأحسن شكراً"
           />
-          <Typography variant="h5" gutterBottom sx={{ color: "text.hover" }}>
-            محمود حسن
-          </Typography>
-          <Typography variant="h6" gutterBottom>
-            27 سنة
-          </Typography>
-          <Rating name="read-only" value="5" readOnly />
-          <Typography padding={5}>
-            جودة نومي كتير أحسن والإمساك شبه اختفى وحاسة جسمي أخف بلشت بناطليني
-            تعرض وبشرتي صايرة بتجنن ماعاد في حبوب الحمدلله
-          </Typography>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <div style={circl}></div>
-            <div style={circl}></div>
-            <div style={circl}></div>
-          </div>
-        </Container>
-      </Container>
+        </SwiperSlide>
+        <SwiperSlide>
+          <ReviewsCard
+            name="أحمد خالد"
+            age="33 سنة"
+            review="جودة نومي كتير أحسن والإمساك شبه اختفى وحاسة جسمي أخف بلشت بناطليني تعرض وبشرتي صايرة بتجنن ماعاد في حبوب الحمممدلله"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ReviewsCard
+            name="سارة عبدالله"
+            age="27 سنة"
+            review="يعني صح مجربة امشي ع برنامج لحالي بس كنت مل وافقس فوراً هلأ المتابعة معك وتنوع البرنامج ممتاز بالنسبة الي"
+          />
+        </SwiperSlide>
+      </Swiper>
 
       {/* Reviews */}
+
+      {/* tests */}
+      <Typography variant="h4" sx={{ padding: "30px" }}>
+        تقييم سريع لعلاقتك بالطعام{" "}
+      </Typography>
+      <Typography variant="h2">
+        اختبارات شاملة تجرى لتقييم الحالة الغذائية والصحية بدقة، مما يساعد على
+        تصميم خطط علاجية مخصصة.
+      </Typography>
+
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <SwiperSlide>
+          <TestBox
+            name="اختبار الأكل العاطفي"
+            goal=" أجِب بـ(نعم/لا) على 10 أسئلة لكشف مدى تأثير العواطف على أكلِك، وتحليل بسيط للنتائج يوجهك نحو الخطوة التالية."
+            testnum="/test1"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TestBox
+            name="اختبار اضطراب صورة الجسد "
+            goal="قيّمي رضاكِ عن جسمكِ بـ(دائماً، أحياناً، نادراً) على 10 أسئلة تساعدك تفهمين كيف ينظر عقلكِ لجسدكِ.  "
+            testnum="/test2"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TestBox
+            name="اختبار الهوس الصحي"
+            goal=" أجِب بـ(نعم/لا) على 10 أسئلة لكشف هل إهتمامك بصحتك تحول إلى هوس؟، وتحليل بسيط للنتائج يوجهك نحو الخطوة التالية."
+            testnum="/test3"
+          />
+        </SwiperSlide>
+      </Swiper>
+      {/* tests */}
 
       {/* location */}
       <Typography
