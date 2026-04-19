@@ -19,7 +19,7 @@ import Products from "./Components/Products.js";
 import Cart from "./Components/Cart.js";
 import Workshops from "./Components/Workshops.js";
 import Booking from "./Components/Booking.js";
-
+import DashHome from "./Dashboard/DashHome.js";
 
 function App() {
   return (
@@ -35,7 +35,12 @@ function App() {
           {/* just now  */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/" element={<Home />} />
+
+{/* just for nom  */}
+          <Route path="/" element={<DashHome/>} />
+{/* just for nom  */}
+
+
           <Route path="/test1" element={<Test1 />} />
           <Route path="/test2" element={<Test2/>} />
           <Route path="/test3" element={<Test3 />} />

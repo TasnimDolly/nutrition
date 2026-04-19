@@ -1,5 +1,5 @@
 import LoginLayout from "./LoginLayout";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import loginimg from "../imgs/login.png";
 // Mui Components
 import Button from "@mui/material/Button";
@@ -12,7 +12,39 @@ import LockIcon from "@mui/icons-material/Lock";
 import Stack from "@mui/material/Stack";
 import InputAdornment from "@mui/material/InputAdornment";
 // Mui Components
+import { useState } from "react";
+import axios from "axios";
+
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, seterror] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    seterror("");
+    setSuccess("");
+
+    try {
+      if (!email || !password) {
+        seterror("جميع الحقول مطلوبة");
+        return;
+      }
+      const response = await axios.post("       عطيني ال api حطه هون    ", {
+        email,
+        password,
+      });
+      console.log(response.data);
+      setSuccess("تم تسجيل الدخول بنجاح");
+    } catch (error) {
+      console.error("Error logging in:", error);
+      seterror("حدث خطأ أثناء تسجيل الدخول");
+    }
+  };
+  console.log(error);
+  console.log(success);
+
   return (
     <>
       <LoginLayout img={loginimg} backTo={"/"}>
@@ -24,12 +56,14 @@ export default function Login() {
         >
           مرحبا بعودتك سجل الدخول للمتابعة
         </Typography>
-        <form>
+        <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
             className="textfield"
             placeholder="@mail.com"
             label="البريد الالكتروني"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             slotProps={{
               htmlInput: {
                 sx: {
@@ -54,6 +88,8 @@ export default function Login() {
           <TextField
             fullWidth
             className="textfield"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="ادخل كلمة السر"
             label="كلمة السر"
             slotProps={{
@@ -115,20 +151,20 @@ export default function Login() {
           >
             تسجيل الدخول{" "}
           </Button>
-<Link
-                        style={{ color: "#06363D", textDecoration: "none" }}
-                        to="/createaccount"
-                      >
-          <Button
-            sx={{
-              width: "100%",
-            }}
-            color={"secondary"}
-            variant="contained"
+          <Link
+            style={{ color: "#06363D", textDecoration: "none" }}
+            to="/createaccount"
           >
-            انشاء حساب{" "}
+            <Button
+              sx={{
+                width: "100%",
+              }}
+              color={"secondary"}
+              variant="contained"
+            >
+              انشاء حساب{" "}
             </Button>
-            </Link>
+          </Link>
         </form>
       </LoginLayout>
     </>

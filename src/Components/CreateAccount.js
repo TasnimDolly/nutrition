@@ -11,8 +11,45 @@ import Stack from "@mui/material/Stack";
 import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import { useState } from "react";
+import axios from "axios";
 
 export default function CreateAccount() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("");
+  const [error, seterror] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    seterror("");
+    setSuccess("");
+    try {
+      if (!email || !password || !confirmPassword || !name) {
+        seterror("جميع الحقول مطلوبة");
+        return;
+      }
+      if (password !== confirmPassword) {
+        seterror("كلمة السر غير متطابقة");
+        return;
+      }
+      const response = await axios.post("       عطيني ال api حطه هون    ", {
+        email,
+        password,
+        name,
+      });
+      console.log(response.data);
+      setSuccess("تم إنشاء الحساب بنجاح");
+    } catch (error) {
+      console.error("Error creating account:", error);
+      seterror("حدث خطأ أثناء إنشاء الحساب");
+    }
+  };
+  console.log(error);
+  console.log(success);
+
   return (
     <>
       <LoginLayout img={createaccountimg} backTo={"/"}>
@@ -24,12 +61,14 @@ export default function CreateAccount() {
         >
           أنشئ حسابك الآن وابدأ رحلتك الصحية معنا{" "}
         </Typography>
-        <form>
+        <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
             className="textfield"
             placeholder="ادخل اسمك"
             label="الاسم"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             slotProps={{
               input: {
                 endAdornment: (
@@ -48,6 +87,8 @@ export default function CreateAccount() {
             className="textfield"
             placeholder="@mail.com"
             label="البريد الالكتروني"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             slotProps={{
               input: {
                 endAdornment: (
@@ -65,6 +106,8 @@ export default function CreateAccount() {
             className="textfield"
             placeholder="ادخل كلمة السر"
             label="كلمة السر"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             slotProps={{
               input: {
                 endAdornment: (
@@ -82,6 +125,8 @@ export default function CreateAccount() {
             className="textfield"
             placeholder="تاكيد كلمة السر"
             label="تاكيد كلمة السر"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             slotProps={{
               input: {
                 endAdornment: (

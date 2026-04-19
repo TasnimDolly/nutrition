@@ -37,8 +37,18 @@
 
 .App {
   text-align: center;
+  direction: rtl;
 }
-
+.Dash-container {
+  width: calc(100% - 260px);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.Dash-content {
+  background-color: hsl(190, 53%, 76%, 40%);
+  padding: 20px 40px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
