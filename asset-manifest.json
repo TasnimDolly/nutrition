@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/nutrition/static/css/main.46fa2d49.css",
-    "main.js": "/nutrition/static/js/main.829d6152.js",
+    "main.css": "/nutrition/static/css/main.9945a5f6.css",
+    "main.js": "/nutrition/static/js/main.40b88df7.js",
     "static/js/453.f7d42e82.chunk.js": "/nutrition/static/js/453.f7d42e82.chunk.js",
-    "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
+    "static/media/Landing.svg": "/nutrition/static/media/Landing.71d35631f6040a822596.svg",
     "static/media/testsImg.png": "/nutrition/static/media/testsImg.b959203c538c9e68e821.png",
     "static/media/postimg.png": "/nutrition/static/media/postimg.22cb0b3c5c5d5bd25632.png",
     "static/media/packagesbg.png": "/nutrition/static/media/packagesbg.c5ffb32cd67f9dc6800a.png",
@@ -19,6 +19,7 @@
     "static/media/product5.png": "/nutrition/static/media/product5.14eec98cc8d12922ae06.png",
     "static/media/product6.png": "/nutrition/static/media/product6.a99f360b903a9aa46915.png",
     "static/media/Almarai-Bold.ttf": "/nutrition/static/media/Almarai-Bold.6950c5a6d2dcd9e29b5d.ttf",
+    "static/media/otp.png": "/nutrition/static/media/otp.eebb46866bb0ca1997d3.png",
     "static/media/Almarai-Regular.ttf": "/nutrition/static/media/Almarai-Regular.4d8fe12612ad34e16602.ttf",
     "static/media/product1.png": "/nutrition/static/media/product1.1d2ce4a189940f7ecc5d.png",
     "static/media/Almarai-Light.ttf": "/nutrition/static/media/Almarai-Light.e91bfa6b2938b4255992.ttf",
@@ -37,12 +38,12 @@
     "static/media/Syriatelcash.png": "/nutrition/static/media/Syriatelcash.98ca1eeffda4a37e0590.png",
     "static/media/DashHomePg.png": "/nutrition/static/media/DashHomePg.96af27955f115bbd6732.png",
     "index.html": "/nutrition/index.html",
-    "main.46fa2d49.css.map": "/nutrition/static/css/main.46fa2d49.css.map",
-    "main.829d6152.js.map": "/nutrition/static/js/main.829d6152.js.map",
+    "main.9945a5f6.css.map": "/nutrition/static/css/main.9945a5f6.css.map",
+    "main.40b88df7.js.map": "/nutrition/static/js/main.40b88df7.js.map",
     "453.f7d42e82.chunk.js.map": "/nutrition/static/js/453.f7d42e82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.46fa2d49.css",
-    "static/js/main.829d6152.js"
+    "static/css/main.9945a5f6.css",
+    "static/js/main.40b88df7.js"
   ]
 }
