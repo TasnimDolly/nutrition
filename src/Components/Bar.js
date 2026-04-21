@@ -29,6 +29,10 @@ import Badge from "@mui/material/Badge";
 // icons
 
 export default function Bar() {
+  // just now
+  const loggedin = true;
+  // just now
+
   const pages = [
     { name: "الرئيسية", path: "/Home" },
     { name: "المواعيد و الحجز", path: "/Booking" },
@@ -139,8 +143,9 @@ export default function Bar() {
                       }}
                     >
                       {page.name}
-                    </Button>
-                  </RouterLink>
+                      </Button>
+                    </RouterLink>
+                  
                 ),
               )}
             </Box>
@@ -154,7 +159,7 @@ export default function Bar() {
                 direction: "ltr",
               }}
             >
-              <RouterLink to="/createaccount" style={{ color: "inherit" }}>
+              <RouterLink to={loggedin ? "/profile" : "/createaccount"} style={{ color: "inherit" }}>
                 <IconButton
                   size="large"
                   aria-label="account of current user"
@@ -295,6 +300,7 @@ export default function Bar() {
                         </Accordion>
                       </>
                     ) : (
+                        <>
                       <RouterLink
                         style={{ color: "#A0D7E2", textDecoration: "none" }}
                         to={page.path}
@@ -313,9 +319,16 @@ export default function Bar() {
                         >
                           {page.name}
                         </Button>
-                      </RouterLink>
+                          </RouterLink>
+                                                   
+
+                          </>
                     ),
                   )}
+                  {/* <RouterLink to='/cart'>
+                    <ShoppingCartIcon />
+                    </RouterLink> */}
+                  
                 </Box>
               </Drawer>
             </Box>

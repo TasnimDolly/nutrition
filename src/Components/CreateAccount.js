@@ -52,7 +52,7 @@ export default function CreateAccount() {
 
   return (
     <>
-      <LoginLayout img={createaccountimg} backTo={"/"}>
+      <LoginLayout img={createaccountimg} backTo={"/login"}>
         <Typography
           sx={{
             color: "text.skyblue",
@@ -65,10 +65,8 @@ export default function CreateAccount() {
           <TextField
             fullWidth
             className="textfield"
-            placeholder="ادخل اسمك"
-            label="الاسم"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            placeholder=" ادخل اسمك الكامل "
+            label="الاسم الكامل"
             slotProps={{
               input: {
                 endAdornment: (

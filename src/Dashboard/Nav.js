@@ -4,7 +4,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Box, Drawer, Toolbar, Typography } from "@mui/material";
-
+import { Link } from "react-router-dom";
 //icons
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
@@ -18,18 +18,46 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import NavLogo from "./imgs/NavLogo.png";
 
-const pages = [
-  "الرئيسية",
-  "إدارة المرضى",
-  "إدارة المواعيد",
-  "إدارة الباقات",
-  "إدارة المنتجات",
-  "إدارة الورشات",
-  "إدارة المحتوى التثقيفي",
-  "التواصل",
-  "الإعدادات",
-  "تسجيل الخروج",
-];
+const pages = [{
+  name: "الرئيسية",
+  path:'/'
+},
+{
+  name: "إدارة المرضى",
+  path:'/manage-patients'
+},
+{
+  name: "إدارة المواعيد",
+  path:'/manage-appointments'
+},
+{
+  name: "إدارة الباقات",
+  path:'/managePackages'
+},
+{
+  name: "إدارة المنتجات",
+  path:'/manage-products'
+},
+{
+  name: "إدارة الورشات",
+  path:'/manage-workshops'
+},
+{
+  name: "إدارة المحتوى التثقيفي",
+  path:'/manage-educational-content'
+},
+{
+  name: "التواصل",
+  path:'/contact'
+},
+{
+  name: "الإعدادات",
+  path:'/settings'
+},
+{
+  name: "تسجيل الخروج",
+  path:'/logout'
+}];
 const pagesicons = [
   <HomeIcon />,
   <PersonIcon />,
@@ -73,9 +101,11 @@ export default function Nav() {
             width: 260,
           }}
         >
-          {pages.map((text, index) => (
+          {pages.map((t, index) => (
+          
+            <Link to={t.path} style={{ textDecoration: "none" }}>
             <ListItem
-              key={text}
+              key={t.text}
               disablePadding
               sx={{
                 marginTop: index === pages.length - 2 ? "80px" : 0,
@@ -110,10 +140,12 @@ export default function Nav() {
                       fontSize: "20px",
                     },
                   }}
-                  primary={text}
+                  primary={t.name}
                 />
               </ListItemButton>
             </ListItem>
+</Link>
+        
           ))}
         </List>
       </Drawer>

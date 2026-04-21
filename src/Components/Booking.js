@@ -26,6 +26,9 @@ import { Alert } from "@mui/material";
 export default function Booking() {
   const [AppointmentTime, setAppointmentTime] = useState("");
   const [AppointmentDate, setAppointmentDate] = useState(null);
+  console.log(AppointmentDate)
+  localStorage.setItem("AppointmentTime", AppointmentTime);
+  localStorage.setItem("AppointmentDate", AppointmentDate);
   function handleAppointmentTime(time) {
     setAppointmentTime(time);
     // console.log(time);
@@ -74,6 +77,7 @@ export default function Booking() {
             </Box>
         </Stack>
       </Box>
+      
 
       <Grid
         container

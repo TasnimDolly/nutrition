@@ -80,12 +80,22 @@ const theme = createTheme({
           "&.Mui-checked": {
             color: "primary",
           },
+          '& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused': {
+            minHeight: '80px !important',
+            width:'345px'
+            ,padding: '0 14px',
+          },
+          '& .MuiOutlinedInput-root':{minHeight:'60px',width:'350px'},
+          
           "& .MuiSvgIcon-root": {
             fontSize: 30,
             padding: 0,
           },
           "& .MuiInputLabel-root.Mui-focused": {
             color: "text.primary",
+            transform: 'translate(-8px, -9px) !important',
+            right: '16px',
+            fontSize: "16px",
           },
           "& ": {
             marginTop: "41px",

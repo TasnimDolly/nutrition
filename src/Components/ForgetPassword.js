@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import EmailIcon from "@mui/icons-material/Email";
+import { Link } from "react-router-dom";
+import OTP from "./OTP.js";
 import InputAdornment from "@mui/material/InputAdornment";
 // Mui Components
 
@@ -25,6 +27,7 @@ export default function ForgetPassword() {
             className="textfield"
             placeholder="@mail.com"
             label="البريد الالكتروني"
+
             slotProps={{
               htmlInput: {
                 sx: {
@@ -48,6 +51,7 @@ export default function ForgetPassword() {
             variant="standard"
           />
 
+<Link to='/otp' element= {<OTP/>}>
           <Button
             sx={{
               width: "100%",
@@ -57,7 +61,8 @@ export default function ForgetPassword() {
             variant="contained"
           >
             ارسال{" "}
-          </Button>
+            </Button>
+            </Link>
         </form>
       </LoginLayout>
     </>

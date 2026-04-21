@@ -12,6 +12,7 @@ import ResetPassword from "../src/Components/ResetPassword.js";
 import Login from "../src/Components/Login.js";
 import Contact from "../src/Components/Contact.js";
 import CreateAccount from "../src/Components/CreateAccount.js";
+import Profile from "../src/Components/Profile.js";
 import Notifications from "./Components/Notifications.js";
 import DietsPackages from "./Components/DietsPackages.js";
 import TreatmentPackages from "./Components/TreatmentPackages.js";
@@ -20,7 +21,8 @@ import Cart from "./Components/Cart.js";
 import Workshops from "./Components/Workshops.js";
 import Booking from "./Components/Booking.js";
 import DashHome from "./Dashboard/DashHome.js";
-
+import OTP from './Components/OTP.js';
+import DashPackages from "./Dashboard/DashPackages.js";
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -28,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
-          <Route path="/r" element={<ResetPassword />} />
+          <Route path="/resetpassword" element={<ResetPassword />} />
           <Route path="/createaccount" element={<CreateAccount />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/notifications" element={<Notifications />} />
@@ -38,6 +40,7 @@ function App() {
 
 {/* just for nom  */}
           <Route path="/" element={<DashHome/>} />
+          <Route path="/managePackages" element={<DashPackages/>} />
 {/* just for nom  */}
 
 
@@ -49,6 +52,8 @@ function App() {
           <Route path="/Products" element={<Products />} />
           <Route path="/Workshops" element={<Workshops />} />
           <Route path="/Booking" element={<Booking />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/otp" element={<OTP />} />
         </Routes>
       </ThemeProvider>
     </div>
