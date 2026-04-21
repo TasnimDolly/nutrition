@@ -11,13 +11,13 @@ import { Typography } from '@mui/material';
 
 
 
-export default function EditDialog({open,onClose,onConfirm}) {
+export default function EditDialog({title,caption,confirm,open,onClose,onConfirm}) {
   return (
     <Dialog PaperProps={{sx:{background:"#FFFFFF",padding:'10px'}}} open={open} onClose={onClose} fullWidth maxWidth="sm" dir="rtl">
           <DialogTitle sx={{ }}>
-           <Typography variant='h4'>  تعديل تفاصيل الباقة
+           <Typography variant='h4'> {title}
 </Typography>
-                  <Typography variant='caption'>تحديث معلومات البرنامج الغذائي  </Typography>
+                  <Typography variant='caption'>{caption}</Typography>
           </DialogTitle>
           <Divider />
           <DialogContent >
@@ -86,7 +86,7 @@ export default function EditDialog({open,onClose,onConfirm}) {
                   </Grid> 
                   <Stack  direction='row' justifyContent='space-between' sx={{width:'100%'}}>
                       <Typography variant='h6' sx={{ marginBottom: 1 }}> الحالة 
-                      <Typography variant='caption' sx={{ display: 'block' }}> نشطة / غير نشطة </Typography>
+                      <Typography variant='caption' sx={{ display: 'block' }}> تفعيل او تعطيل ظهور الباقة للمشتركين </Typography>
                       </Typography>
                       <FormControlLabel control={<Switch defaultChecked />}  />
                                         </Stack>
@@ -100,8 +100,7 @@ export default function EditDialog({open,onClose,onConfirm}) {
 
       <DialogActions>
         <Button sx ={{}} onClick={()=>{onConfirm()}} variant="contained">
-          حفظ التغييرات 
-        </Button>
+{confirm}        </Button>
         <Button onClick={onClose} color="inherit">
 الغاء الامر
         </Button>

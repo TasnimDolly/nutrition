@@ -11,9 +11,9 @@ import {useState } from 'react';
 import { styled } from '@mui/material/styles';
 import './DashPackagesTable.js'
 import DashPackagesTable from './DashPackagesTable.js';
+import EditDialog from './EditDialog.js';
 export default function DashPackages() {
-      
-     
+     const [openCreateDialog,setOpenCreateDialog]=useState (false)
       const [activeFilter, setActiveFilter] = useState('');
     const data = [
   { value: 5, label: 'A' },
@@ -21,7 +21,9 @@ export default function DashPackages() {
   { value: 15, label: 'C' },
   { value: 20, label: 'D' },
     ];
-    
+     const handleConfirm = () => {
+    setOpenCreateDialog(false);
+  };
 const StyledText = styled('text')(({ theme }) => ({
   fill: theme.palette.text.primary,
   textAnchor: 'middle',
@@ -76,7 +78,7 @@ const StyledText = styled('text')(({ theme }) => ({
        </Typography>
                                     </CardContent>
           </Card>                         
-                            <Button variant="contained" color="primary" sx={{ margin: "10px" }}>
+                            <Button onClick={()=>setOpenCreateDialog(true)} variant="contained" color="primary" sx={{ margin: "10px" }}>
                                 اضافة باقة جديدة                            </Button>
                             
                         </Stack>
@@ -136,6 +138,7 @@ const StyledText = styled('text')(({ theme }) => ({
                             <DashPackagesTable />
                             
 </Container>
+      <EditDialog title ='اضافة باقة جديدة ' caption='اادخل تفاصيل باقتك الجديدة' confirm='انشاء باقة'  open={openCreateDialog} onClose={() => setOpenCreateDialog(false)} onConfirm={handleConfirm} />
 
        </Container>          
             </Box>

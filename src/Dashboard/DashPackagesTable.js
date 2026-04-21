@@ -9,18 +9,21 @@ import EditDialog from './EditDialog';
 import DeleteIcon from "@mui/icons-material/Delete";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { IconButton, Box, Collapse } from '@mui/material';
+import { IconButton, Box, Collapse,Button } from '@mui/material';
 import TimelineAccordion from './TimelineAccordion';
 import DeleteDialog from './DeleteDialog';
 import EditNoteIcon from '@mui/icons-material/EditNote';
+import DisplayPackagePatients from './DisplayPackagePatients.js'
 export default function DashPackagesTable() {
   const [openEditPackage, setOpenEditPackage] = useState(false);
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [openEditDialog, setOpenEditDialog] = useState(false);
+        const [openPatients,setOpenPatients]=useState (false)
+
   const handleConfirm = () => {
     setOpenDeleteDialog(false);
+    setOpenPatients(false);
   };
-  const [openRow, setOpenRow] = useState(null);
 
   const rows = [
     { id: 1, name: 'باقة الجمال والدلال', price: 100, duration: 'شهرين','status':'نشطة' },
@@ -54,11 +57,11 @@ export default function DashPackagesTable() {
                 <TableCell sx={{ border: '1px solid #777', fontWeight: 800 ,textAlign:'center'}}>{row.duration}</TableCell>
                 <TableCell sx={{ border: '1px solid #777', fontWeight: 800,textAlign:"center" }}>{row.status}</TableCell>
                 <TableCell sx={{ border: '1px solid #777', fontWeight: 800,textAlign:"center" }}> 
-                <IconButton onClick={() => setOpenRow(openRow === row.id ? null : row.id)}>
-                    {openRow === row.id ?  <VisibilityOffIcon /> :  <VisibilityIcon />}
-                  </IconButton>
-                  <IconButton onClick={()=>setOpenDeleteDialog(true)}>
-                    <DeleteIcon />
+                
+<Button variant='contained' onClick={() => setOpenPatients (true)}>عرض المشتركين</Button>
+              
+                  <IconButton sx={{color:'rgb(230, 82, 82)', margin:'0px 40px'}} onClick={()=>setOpenDeleteDialog(true)}>
+                    <DeleteIcon  />
                   </IconButton>
                   <IconButton onClick={()=>setOpenEditPackage(true)}>
                     <EditNoteIcon />
@@ -66,25 +69,6 @@ export default function DashPackagesTable() {
             </TableCell>
               </TableRow>
 
-             <TableRow
-  sx={{
-    "& > *": { borderBottom: "none" },height:'0' 
-  }}
->
-  <TableCell
-    colSpan={4}
-    sx={{
-      padding: 0,
-      background: "#f7f7f7",
-    }}
-  >
-    <Collapse in={openRow === row.id} timeout="auto" unmountOnExit>
-      <Box sx={{ p: 2 }}>
-        <TimelineAccordion />
-      </Box>
-    </Collapse>
-  </TableCell>
-</TableRow>
             </>
           ))}
         </TableBody>
@@ -99,8 +83,8 @@ export default function DashPackagesTable() {
         onConfirm={handleConfirm}
         
       />
-      
-      <EditDialog open={openEditPackage} onClose={() => setOpenEditPackage(false)} onConfirm={handleConfirm} />
+      <DisplayPackagePatients open={openPatients} onClose={() => setOpenPatients(false)} onConfirm={handleConfirm} />
+      <EditDialog open={openEditPackage} onClose={() => setOpenEditPackage(false)} onConfirm={handleConfirm} title='تعديل تفاصيل الباقة ' caption='تحديث معلومات الباقة' confirm='حفظ التغييرات'/>
     </TableContainer>
   );
 }
