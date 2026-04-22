@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/nutrition/static/css/main.9945a5f6.css",
-    "main.js": "/nutrition/static/js/main.b0b2231a.js",
+    "main.css": "/nutrition/static/css/main.195989ae.css",
+    "main.js": "/nutrition/static/js/main.a2206fc8.js",
     "static/js/453.f7d42e82.chunk.js": "/nutrition/static/js/453.f7d42e82.chunk.js",
-    "static/media/Landing.svg": "/nutrition/static/media/Landing.71d35631f6040a822596.svg",
+    "static/media/Landing.svg": "/nutrition/static/media/Landing.794b72216856ebc1c835.svg",
     "static/media/testsImg.png": "/nutrition/static/media/testsImg.b959203c538c9e68e821.png",
     "static/media/postimg.png": "/nutrition/static/media/postimg.22cb0b3c5c5d5bd25632.png",
     "static/media/packagesbg.png": "/nutrition/static/media/packagesbg.c5ffb32cd67f9dc6800a.png",
@@ -38,12 +38,12 @@
     "static/media/Syriatelcash.png": "/nutrition/static/media/Syriatelcash.98ca1eeffda4a37e0590.png",
     "static/media/DashHomePg.png": "/nutrition/static/media/DashHomePg.96af27955f115bbd6732.png",
     "index.html": "/nutrition/index.html",
-    "main.9945a5f6.css.map": "/nutrition/static/css/main.9945a5f6.css.map",
-    "main.b0b2231a.js.map": "/nutrition/static/js/main.b0b2231a.js.map",
+    "main.195989ae.css.map": "/nutrition/static/css/main.195989ae.css.map",
+    "main.a2206fc8.js.map": "/nutrition/static/js/main.a2206fc8.js.map",
     "453.f7d42e82.chunk.js.map": "/nutrition/static/js/453.f7d42e82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9945a5f6.css",
-    "static/js/main.b0b2231a.js"
+    "static/css/main.195989ae.css",
+    "static/js/main.a2206fc8.js"
   ]
 }
