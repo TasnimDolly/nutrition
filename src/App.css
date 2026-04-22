@@ -46,10 +46,56 @@
   top: 0px;
 }
 .Dash-content {
-  background:linear-gradient(to right, #DCEECF, #d0ebe5) ;
+  background: linear-gradient(to right, #dceecf, #d0ebe5);
+  /* background-color: #E5EEFF; */
   padding: 20px 40px;
 }
-.App-logo {
+.settingsPageInput {
+  height: 50px;
+  background: transparent;
+  border-radius: 5px;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.settingsPageInput:focus {
+  outline: none;
+  border: 2px solid #0d6f73 !important;
+  transition: border 0.1s;
+  -webkit-transition: border 0.1s;
+  -moz-transition: border 0.1s;
+  -ms-transition: border 0.1s;
+  -o-transition: border 0.1s;
+}
+.table-head-cell {
+  border: 1px solid #777 !important;
+  text-align: center !important;
+  font-size: 24px !important;
+  color: #0d6f73 !important;
+}
+.table-body {
+  height: auto;
+  display: table-row;
+}
+.table-body-cell {
+  width: fit-content !important;
+  /* max-width: 50px ; */
+  border: 1px solid #777 !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+}
+.patient-photo{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -82,7 +128,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 .contactPage .icon {
   font-size: 30px;
 }
@@ -167,14 +213,14 @@
 .bookingpage .MuiDayCalendar-weekDayLabel {
   width: calc(100% / 7);
 }
-.otpForm{
+.otpForm {
   transition: border 0.4s;
 }
-.otpForm input:focus-visible{
-outline: none;
-border:2px solid #0D6F73 !important;
-/* transition:border 0.1s  */
+.otpForm input:focus-visible {
+  outline: none;
+  border: 2px solid #0d6f73 !important;
+  /* transition:border 0.1s  */
 }
- .typo{
+.typo {
   margin: 30px !important;
 }

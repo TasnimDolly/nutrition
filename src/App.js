@@ -23,6 +23,11 @@ import Booking from "./Components/Booking.js";
 import DashHome from "./Dashboard/DashHome.js";
 import OTP from './Components/OTP.js';
 import DashPackages from "./Dashboard/DashPackages.js";
+import DashProducts from "./Dashboard/DashProducts.js";
+import DashBooking from "./Dashboard/DashBooking.js";
+import DashPatients from "./Dashboard/DashPatients.js";
+import Settings from "./Dashboard/Settings.js";
+
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -41,6 +46,10 @@ function App() {
 {/* just for nom  */}
           <Route path="/" element={<DashHome/>} />
           <Route path="/managePackages" element={<DashPackages/>} />
+          <Route path="/manage-products" element={<DashProducts/>} />
+          <Route path="/manage-appointments" element={<DashBooking/>} />
+          <Route path='/manage-patients' element={<DashPatients/>} />
+          <Route path="/settings" element={<Settings/>} />
 {/* just for nom  */}
 
 
