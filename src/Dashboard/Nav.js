@@ -48,7 +48,7 @@ const pages = [{
 },
 {
   name: "التواصل",
-  path:'/contact'
+  path:'/manage-contact'
 },
 {
   name: "الإعدادات",
@@ -74,7 +74,8 @@ const pagesicons = [
 export default function Nav() {
   return (
     <>
-      <Drawer variant="permanent" anchor="right">
+      <Drawer variant="permanent" anchor="right" PaperProps={{ sx: { 
+        zIndex: (theme) => theme.zIndex.drawer + 2, } }}>
         <Toolbar
           sx={{
             display: "flex",

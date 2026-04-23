@@ -35,6 +35,7 @@ import img10 from "../imgs/product10.png";
 import img11 from "../imgs/product11.png";
 import img12 from "../imgs/product12.png";
 // imgs
+
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -57,86 +58,84 @@ export default function Products() {
       id: 1,
       img: img1,
       price: "15$",
-      type: "",
-
+      type: "سناكات صحية",
       name: "اسم المنتج",
     },
     {
       id: 2,
       img: img2,
       price: "15$",
-      type: "",
+      type: "عشبية صحية",
       name: "اسم المنتج",
     },
     {
       id: 3,
       img: img3,
       price: "15$",
-      type: "",
+      type: "أدوات صحية",
       name: "اسم المنتج",
     },
     {
       id: 4,
       img: img4,
       price: "15$",
-      type: "",
+      type: "عشبية صحية",
       name: "اسم المنتج",
     },
     {
       id: 5,
       img: img5,
       price: "15$",
-      type: "",
+      type: "أدوات صحية",
       name: "اسم المنتج",
     },
     {
       id: 6,
       img: img6,
       price: "15$",
-      type: "",
+      type: "أدوات صحية",
       name: "اسم المنتج",
     },
     {
       id: 7,
       img: img7,
       price: "15$",
-      type: "",
-
+      type: "سناكات صحية",
       name: "اسم المنتج",
     },
     {
       id: 8,
       img: img8,
       price: "15$",
+      type: "سناكات صحية",
       name: "اسم المنتج",
-      type: "",
     },
     {
       id: 9,
       img: img9,
       price: "15$",
       name: "اسم المنتج",
-      type: "",
+      type: "عشبية صحية",
     },
     {
       id: 10,
       img: img10,
       price: "15$",
-      type: "",
+      type: "سناكات صحية",
       name: "اسم المنتج",
     },
     {
       id: 11,
       img: img11,
       price: "15$",
-      type: "",
+      type: "سناكات صحية",
       name: "اسم المنتج",
     },
     {
-      id: 9,
+      id: 12,
       img: img12,
       price: "15$",
-      type: "",
+      type: "سناكات صحية",
       name: "اسم المنتج",
     },
   ];
@@ -145,12 +144,26 @@ export default function Products() {
       <Grid item size={{ md: 4, sm: 6, xs: 12 }} key={product.id}>
         <Card
           sx={{
+            textAlign: "right",
             maxWidth: 400,
             borderRadius: 5,
             backgroundColor: "#d6f4f9",
             boxShadow: "2px 3px 10px 0px #000000",
+            border: "15px solid #d6f4f9",
+            position: "relative",
           }}
         >
+          <Button
+            sx={{
+              position: "absolute",
+              top: "10px",
+              right: "5px",
+              borderRadius: 5,
+              backgroundColor: "#d6f4f9",
+            }}
+          >
+            {product.type}
+          </Button>
           <CardMedia
             className="card"
             component="img"
@@ -161,16 +174,10 @@ export default function Products() {
             }}
           />
           <CardContent>
-            <Typography
-              variant="h2"
-              gutterBottom
-              sx={{ textAlign: "center", marginBottom: "20px" }}
-            >
+            <Typography variant="h2" gutterBottom sx={{ marginBottom: "20px" }}>
               {product.name}
             </Typography>
-            <Typography gutterBottom sx={{ textAlign: "center" }}>
-              السعر {product.price}
-            </Typography>
+            <Typography gutterBottom>السعر {product.price}</Typography>
           </CardContent>
           <CardActions sx={{ display: "flex", justifyContent: "center" }}>
             {/* <Stack direction='row' justifyContent='space-between' spacing={10}> */}
@@ -229,7 +236,6 @@ export default function Products() {
           >
             حسب النوع
           </Button>
-
           <Menu
             anchorEl={anchorElType}
             open={Boolean(anchorElType)}
@@ -271,7 +277,6 @@ export default function Products() {
           >
             حسب المخزون
           </Button>
-
           <Menu
             anchorEl={anchorElQuantity}
             open={Boolean(anchorElQuantity)}

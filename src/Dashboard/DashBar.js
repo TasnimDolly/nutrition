@@ -1,4 +1,3 @@
-
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -13,11 +12,12 @@ export default function DashBar() {
     <AppBar
       color="bg"
       sx={{
-        backgroundColor:"white",
+        backgroundColor: "white",
         position: "sticky",
         left: "0px",
         top: "0px",
         boxShadow: "0px 3px 15px 0px #00000040",
+        zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
     >
       <Toolbar

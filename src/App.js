@@ -26,6 +26,7 @@ import DashPackages from "./Dashboard/DashPackages.js";
 import DashProducts from "./Dashboard/DashProducts.js";
 import DashBooking from "./Dashboard/DashBooking.js";
 import DashPatients from "./Dashboard/DashPatients.js";
+import DashContact from "./Dashboard/DashContact.js";
 import Settings from "./Dashboard/Settings.js";
 
 import DashPosts from "./Dashboard/DashPosts.js"
@@ -51,6 +52,7 @@ function App() {
           <Route path="/manage-appointments" element={<DashBooking/>} />
           <Route path='/manage-patients' element={<DashPatients/>} />
           <Route path="/settings" element={<Settings/>} />
+          <Route path='/manage-contact' element={<DashContact/>} />
 {/* just for nom  */}
 
           <Route path="/manage-posts" element={<DashPosts/>} />

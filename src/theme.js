@@ -6,7 +6,7 @@ const theme = createTheme({
     h2: {
       fontWeight: 600,
       fontSize: "20px",
-      //  color: "#06363D",
+      //  color: "rgb(6, 54, 61)",
       // backgroundColor:'#DEEDEC'
     },
     h3: {
