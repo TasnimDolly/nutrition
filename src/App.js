@@ -28,6 +28,7 @@ import DashBooking from "./Dashboard/DashBooking.js";
 import DashPatients from "./Dashboard/DashPatients.js";
 import Settings from "./Dashboard/Settings.js";
 
+import DashPosts from "./Dashboard/DashPosts.js"
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -52,6 +53,8 @@ function App() {
           <Route path="/settings" element={<Settings/>} />
 {/* just for nom  */}
 
+          <Route path="/manage-posts" element={<DashPosts/>} />
+          {/* just for nom  */}
 
           <Route path="/test1" element={<Test1 />} />
           <Route path="/test2" element={<Test2/>} />

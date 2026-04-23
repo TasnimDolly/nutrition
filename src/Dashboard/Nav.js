@@ -44,7 +44,7 @@ const pages = [{
 },
 {
   name: "إدارة المحتوى التثقيفي",
-  path:'/manage-educational-content'
+  path:'/manage-posts'
 },
 {
   name: "التواصل",
