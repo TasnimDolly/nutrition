@@ -6,12 +6,6 @@ import NotificationsAlert from "./NotificationsAlert";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import SearchIcon from "@mui/icons-material/Search";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
 // mui library Component
 
 const data = [

@@ -37,7 +37,6 @@ export default function DeleteDialog({
       </DialogTitle>
       <DialogContent>
         <Typography variant="h2" sx={{ marginTop: 5 }}>
-          {" "}
           {content}
         </Typography>
       </DialogContent>

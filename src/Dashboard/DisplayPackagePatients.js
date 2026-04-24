@@ -14,6 +14,7 @@ import { DialogContent } from "@mui/material";
 import { DialogActions } from "@mui/material";
 import { Button, Box } from "@mui/material";
 import { Typography } from "@mui/material";
+import PatientProfile from "./PatientProfile.js";
 import { useState } from "react";
 
 export default function DisplayPackagePatients({
@@ -25,6 +26,10 @@ export default function DisplayPackagePatients({
   onConfirm,
 }) {
   const [active, setActive] = useState("timeline");
+  const [openShowProfile, setOpenShowProfile] = useState(false);
+  const handleConfirm = () => {
+    setOpenShowProfile(false);
+  };
   function PatientsList() {
     const rows = [
       { id: 1, name: "مريض1", status: "فعال" },
@@ -105,7 +110,13 @@ export default function DisplayPackagePatients({
                         textAlign: "center",
                       }}
                     >
-                      <Button variant="contained">عرض ملف المريض</Button>
+                      {" "}
+                      <Button
+                        variant="contained"
+                        onClick={() => setOpenShowProfile(true)}
+                      >
+                        عرض ملف المريض
+                      </Button>
                     </TableCell>
                   </TableRow>
                 </>
@@ -157,6 +168,11 @@ export default function DisplayPackagePatients({
         </DialogActions>
         <Box display={true ? "block" : "none"}></Box>
       </Dialog>
+      <PatientProfile
+        openShowProfile={openShowProfile}
+        onClose={() => setOpenShowProfile(false)}
+        handleConfirm={handleConfirm}
+      />
     </>
   );
 }

@@ -9,14 +9,21 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import DeleteIcon from "@mui/icons-material/Delete";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import { IconButton } from "@mui/material";
 import { TextField, Stack, InputAdornment } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import CircleIcon from "@mui/icons-material/Circle";
+import DeleteDialog from "./DeleteDialog";
+import { DialogTitle } from "@mui/material";
+import { Dialog, Divider } from "@mui/material";
+import { DialogContent } from "@mui/material";
+import { DialogActions } from "@mui/material";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import Grid from "@mui/material/Grid";
+import PatientProfile from "./PatientProfile.js";
 import { useState } from "react";
 
 const BookingColumns = [
@@ -70,14 +77,17 @@ const BookingRows = [
 ];
 
 export default function DashPatients() {
-  const [openEditPackage, setOpenEditPackage] = useState(false);
+  const [openEditProfile, setOpenEditProfile] = useState(false);
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-  const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [openAddDialog, setOpenAddDialog] = useState(false);
+  const [openShowProfile, setOpenShowProfile] = useState(false);
+
   const handleConfirm = () => {
+    setOpenShowProfile(false);
     setOpenDeleteDialog(false);
+    setOpenAddDialog(false);
+    setOpenEditProfile(false);
   };
-  const [openRow, setOpenRow] = useState(null);
-  const [activeFilter, setActiveFilter] = useState("");
 
   return (
     <>
@@ -88,7 +98,9 @@ export default function DashPatients() {
           <DashPagesTitle
             title="إدارة المرضى"
             description="قم بإدارة ملفات المرضى وبياناتهم"
-            addButtonLebal="إضافة مريض جديد"
+            addButtonLebal=" +
+            إضافة مريض جديد"
+            onAddButtonClick={() => setOpenAddDialog(true)}
           ></DashPagesTitle>
           <Stack
             direction="row"
@@ -266,11 +278,19 @@ export default function DashPatients() {
                       alignContent: "center",
                     }}
                   >
-                    <Button variant="contained">عرض ملف المريض</Button>
-                    <IconButton>
+                    <Button
+                      variant="contained"
+                      onClick={() => setOpenShowProfile(true)}
+                    >
+                      عرض ملف المريض
+                    </Button>
+                    <IconButton onClick={() => setOpenEditProfile(true)}>
                       <EditNoteIcon />
                     </IconButton>
-                    <IconButton sx={{ color: "rgb(230, 82, 82)" }}>
+                    <IconButton
+                      onClick={() => setOpenDeleteDialog(true)}
+                      sx={{ color: "rgb(230, 82, 82)" }}
+                    >
                       <DeleteIcon />
                     </IconButton>
                   </Box>
@@ -285,7 +305,7 @@ export default function DashPatients() {
               flexDirection: "column",
               alignItems: "flex-start",
               justifyContent: "flex-start",
-              width: "95%",
+              width: "90%",
               padding: "40px",
               backgroundColor: "secondary.main",
               borderRadius: "20px",
@@ -354,8 +374,192 @@ export default function DashPatients() {
               </Typography>
             </Box>
           </Box>
+          <DeleteDialog
+            open={openDeleteDialog}
+            onClose={() => setOpenDeleteDialog(false)}
+            content=" هل أنت متأكد من إنهاء المتابعة؟ لا يمكن التراجع عن هذا الإجراء
+            سيتم إرسال بريد إلكتروني لطيف للمريض لإعلامه بانتهاء 
+فترة المتابعة الحالية، مع تمنياتنا له بدوام الصحة والعافية."
+            title="هل أنت متأكد من إنهاء المتابعة؟"
+            icon={
+              <DeleteIcon
+                sx={{
+                  fontSize: 50,
+                  borderRadius: "50%",
+                  padding: "10px",
+                  color: "red",
+                  background: "#fe9494",
+                }}
+              />
+            }
+            onConfirm={handleConfirm}
+          />
+          <Dialog
+            PaperProps={{ sx: { background: "#FFFFFF", padding: "10px" } }}
+            open={openEditProfile || openAddDialog}
+            onClose={() => setOpenEditProfile(false) || setOpenAddDialog(false)}
+            fullWidth
+            maxWidth="sm"
+            dir="rtl"
+          >
+            <DialogTitle>
+              <Typography variant="h4">
+                {openEditProfile ? "تعديل ملف المريض" : "إضافة منتج جديد"}
+              </Typography>
+              <Typography variant="caption">
+                {openEditProfile
+                  ? "قم بتحديث معلومات المريض من هنا"
+                  : "املأ المعلومات التالية لإضافة مريض جديد"}
+              </Typography>
+            </DialogTitle>
+            <Divider />
+            <DialogContent>
+              <Grid container spacing={0.2} sx={{ marginTop: 0 }}>
+                <Grid item size={12}>
+                  <TextField
+                    className="textfield"
+                    label=" الاسم الكامل"
+                    fullWidth
+                    variant="outlined"
+                    sx={{
+                      "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                        {
+                          width: "100%",
+                        },
+                      "& .MuiOutlinedInput-root": {
+                        width: "100%",
+                      },
+                      "& .Mui-focused fieldset": {
+                        "& .MuiInputLabel-root.Mui-focused": {
+                          marginTop: "0px",
+                        },
+                        "&.MuiOutlinedInput-notchedOutline legend": {
+                          textAlign: "right",
+                        },
+                      },
+                    }}
+                  />
+                </Grid>
+                <Box sx={{ display: "flex", gap: 4 }}>
+                  <Grid item size={6} sx={{}}>
+                    <TextField
+                      className="textfield"
+                      label=" العمر"
+                      fullWidth
+                      variant="outlined"
+                      sx={{
+                        "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                          {
+                            width: "100%",
+                          },
+                        "& .MuiOutlinedInput-root": { width: "100%" },
+                        "& .Mui-focused fieldset": {
+                          "&.MuiOutlinedInput-notchedOutline legend": {
+                            textAlign: "right",
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item size={6}>
+                    <TextField
+                      className="textfield"
+                      label=" الجنس"
+                      fullWidth
+                      variant="outlined"
+                      sx={{
+                        "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                          {
+                            width: "100%",
+                          },
+                        "& .MuiOutlinedInput-root": { width: "100%" },
+                        "& .Mui-focused fieldset": {
+                          "& .MuiInputLabel-root.Mui-focused": {
+                            marginTop: "0px",
+                          },
+                          "&.MuiOutlinedInput-notchedOutline legend": {
+                            textAlign: "right",
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                </Box>
+                <Grid item size={12}>
+                  <TextField
+                    className="textfield"
+                    label=" رقم الهاتف"
+                    fullWidth
+                    variant="outlined"
+                    sx={{
+                      "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                        {
+                          width: "100%",
+                        },
+                      "& .MuiOutlinedInput-root": {
+                        width: "100%",
+                      },
+                      "& .Mui-focused fieldset": {
+                        "& .MuiInputLabel-root.Mui-focused": {
+                          marginTop: "0px",
+                        },
+                        "&.MuiOutlinedInput-notchedOutline legend": {
+                          textAlign: "right",
+                        },
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item size={12}>
+                  <TextField
+                    className="textfield"
+                    label=" العنوان"
+                    fullWidth
+                    variant="outlined"
+                    sx={{
+                      "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                        {
+                          width: "100%",
+                        },
+                      "& .MuiOutlinedInput-root": {
+                        width: "100%",
+                      },
+                      "& .Mui-focused fieldset": {
+                        "& .MuiInputLabel-root.Mui-focused": {
+                          marginTop: "0px",
+                        },
+                        "&.MuiOutlinedInput-notchedOutline legend": {
+                          textAlign: "right",
+                        },
+                      },
+                    }}
+                  />
+                </Grid>
+              </Grid>
+              <Typography variant="h2" sx={{ marginTop: 5 }}></Typography>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                sx={{}}
+                onClick={() => {
+                  handleConfirm();
+                }}
+                variant="contained"
+              >
+                {openEditProfile ? "حفظ التغييرات" : "إضافة المريض"}
+              </Button>
+              <Button onClick={handleConfirm} color="inherit">
+                الغاء الامر
+              </Button>
+            </DialogActions>
+          </Dialog>
         </Box>
       </Box>
+      <PatientProfile
+        openShowProfile={openShowProfile}
+        onClose={() => setOpenShowProfile(false)}
+        handleConfirm={handleConfirm}
+      />
     </>
   );
 }

@@ -1,12 +1,8 @@
 import Nav from "./Nav";
 import DashBar from "./DashBar";
-import DashPagesTitle from "./DashPagesTitle";
-import { Button, IconButton, Typography } from "@mui/material";
-import { Box, TextField } from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Drawer, Toolbar } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
@@ -277,7 +273,7 @@ export default function DashContact() {
                   marginTop: "10px",
                 }}
               >
-                ابدأ المحادثة
+                تفاصيل الرسالة
               </Typography>
               <Typography
                 sx={{

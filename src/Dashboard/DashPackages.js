@@ -119,7 +119,7 @@ export default function DashPackages() {
           لوحة تحكم الباقات"
               description="
           قم بادارة خطط الإشتراك و المميزات و الأسعار من هنا"
-              addButtonLebal="
+              addButtonLebal=" +
         إضافة باقة جديدة"
               onAddButtonClick={() => setOpenCreateDialog(true)}
             />

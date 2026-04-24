@@ -26,7 +26,7 @@ export default function DashPagesTitle({
         variant="contained"
         sx={{ display: notDisplayAddButton || "block" }}
       >
-        +{addButtonLebal}
+        {addButtonLebal}
       </Button>
     </Box>
   );

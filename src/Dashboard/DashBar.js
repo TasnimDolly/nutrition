@@ -6,6 +6,9 @@ import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import Paper from "@mui/material/Paper";
+import StoreIcon from '@mui/icons-material/Store';
+import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 export default function DashBar() {
   return (
@@ -46,18 +49,38 @@ export default function DashBar() {
             placeholder="بحث عن مريض , موعد ..."
           />
         </Paper>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          sx={{
-            justifySelf: "flex-end",
-            color: "secondary.default",
-          }}
+        <Box
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
+
+        <Link to="/dash-notifications" style={{ textDecoration: "none" }}>
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            sx={{
+              justifySelf: "flex-end",
+              color: "secondary.default",
+            }}
+          >
+            <Badge badgeContent={17} color="error">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+        </Link>
+        <Link to="/dash-Payments" style={{ textDecoration: "none" }}>
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            sx={{
+              justifySelf: "flex-end",
+              color: "secondary.default",
+            }}
+          >
+            <Badge badgeContent={5} color="error">
+              <StoreIcon/>
+            </Badge>
+          </IconButton>
+        </Link>
+            </Box>
       </Toolbar>
     </AppBar>
   );

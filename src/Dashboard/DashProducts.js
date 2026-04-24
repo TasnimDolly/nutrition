@@ -11,6 +11,18 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
+import { IconButton } from "@mui/material";
+import DeleteDialog from "./DeleteDialog";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditNoteIcon from "@mui/icons-material/EditNote";
+import { DialogTitle } from "@mui/material";
+import Switch from "@mui/material/Switch";
+import { FormControlLabel } from "@mui/material";
+import { Dialog, Divider } from "@mui/material";
+import { DialogContent } from "@mui/material";
+import { DialogActions } from "@mui/material";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 
 // imgs
 import img1 from "../imgs/product1.png";
@@ -127,6 +139,24 @@ const productsarr = [
 ];
 
 export default function DashProducts() {
+  const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+  const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [openaddDialog, setOpenaddDialog] = useState(false);
+    const [image, setImage] = useState(null);
+
+  const handleChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+    }
+  };
+
+  const handleConfirm = () => {
+    setOpenDeleteDialog(false);
+    setOpenEditDialog(false);
+    setOpenaddDialog(false);
+  };
+
   const [visible, setVisible] = useState(6);
   const [Itemsquantity, setItemsquantity] = useState([
     {
@@ -195,50 +225,70 @@ export default function DashProducts() {
             </Typography>
             <Typography gutterBottom>السعر {product.price}</Typography>
             <Typography gutterBottom sx={{ margin: "10px 0" }}>
-              الكمية في المخزون:
+              الكمية في المخزون:{product.quantity}
             </Typography>
-            <Stack
+            <Box
               sx={{
-                background: "#0d969b5a",
-                borderRadius: 1,
-                Width: "20px !important",
-                height: "40px",
-                padding: "5px 5px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              gap={1}
             >
-              <Button
-                variant="contained"
-                // onClick={() => handleIncrease(product.id)}
+              <Stack
                 sx={{
-                  minWidth: "40px",
-                  width: 40,
-                  height: 30,
-                  fontSize: 25,
+                  background: "#0d969b5a",
+                  borderRadius: 1,
+                  Width: "20px !important",
+                  height: "40px",
+                  padding: "5px",
                 }}
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                gap={1}
               >
-                +
-              </Button>
-              <Typography variant="h2">
-                {Itemsquantity.find((item) => item.id === product.id)
-                  ?.quantity || product.quantity}
-              </Typography>
-              <Button
-                variant="contained"
-                // onClick={() => handleDecrease(product.id)}
-                sx={{
-                  minWidth: "40px",
-                  width: 40,
-                  height: 30,
-                  fontSize: 25,
-                }}
+                <Button
+                  variant="contained"
+                  // onClick={() => handleIncrease(product.id)}
+                  sx={{
+                    minWidth: "40px",
+                    width: 40,
+                    height: 30,
+                    fontSize: 25,
+                  }}
+                >
+                  +
+                </Button>
+                <Typography variant="h2" sx={{ margin: "0 10px" }}>
+                  {Itemsquantity.find((item) => item.id === product.id)
+                    ?.quantity || product.quantity}
+                </Typography>
+                <Button
+                  variant="contained"
+                  // onClick={() => handleDecrease(product.id)}
+                  sx={{
+                    minWidth: "40px",
+                    width: 40,
+                    height: 30,
+                    fontSize: 25,
+                  }}
+                >
+                  -
+                </Button>
+              </Stack>
+              <IconButton
+                sx={{ margin: "0px 40px" }}
+                onClick={() => setOpenEditDialog(true)}
               >
-                -
-              </Button>
-            </Stack>
+                <EditNoteIcon />
+              </IconButton>
+              <IconButton
+                sx={{ color: "rgb(230, 82, 82)" }}
+                onClick={() => setOpenDeleteDialog(true)}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </Box>
           </CardContent>
         </Card>
       </Grid>
@@ -248,7 +298,6 @@ export default function DashProducts() {
   return (
     <>
       <Nav />
-
       <Box className="Dash-container">
         <DashBar></DashBar>
         <Box className="Dash-content">
@@ -257,7 +306,9 @@ export default function DashProducts() {
           لوحة تحكم المنتجات"
             description="
           قم بادارة المنتجات و المميزات و الأسعار من هنا"
-            addButtonLebal="إضافة منتج جديد"
+            addButtonLebal=" +
+            إضافة منتج جديد "
+            onAddButtonClick={() => setOpenaddDialog(true)}
           ></DashPagesTitle>
           <Stack
             direction="row"
@@ -325,7 +376,7 @@ export default function DashProducts() {
                 الكل
               </Button>
             </Box>
-          </Stack>{" "}
+          </Stack>
           <Grid container spacing={4} sx={{ marginTop: 5 }} alignItems="center">
             {products}
           </Grid>
@@ -340,6 +391,197 @@ export default function DashProducts() {
           >
             عرض المزيد
           </Button>
+          <DeleteDialog
+            open={openDeleteDialog}
+            onClose={() => setOpenDeleteDialog(false)}
+            content="هل انت متأكد من حذف هذه المنتج؟ لا يمكن التراجع عن هذا الإجراء."
+            title="حذف المنتج"
+            icon={
+              <DeleteIcon
+                sx={{
+                  fontSize: 50,
+                  borderRadius: "50%",
+                  padding: "10px",
+                  color: "red",
+                  background: "#fe9494",
+                }}
+              />
+            }
+            onConfirm={handleConfirm}
+          />
+          <Dialog
+            PaperProps={{ sx: { background: "#FFFFFF", padding: "10px" } }}
+            open={openEditDialog || openaddDialog}
+            onClose={() => setOpenEditDialog(false) || setOpenaddDialog(false)}
+            fullWidth
+            maxWidth="sm"
+            dir="rtl"
+          >
+            <DialogTitle>
+              <Typography variant="h4">
+                {openEditDialog ? "تعديل بيانات المنتج" : "إضافة منتج جديد"}
+              </Typography>
+              <Typography variant="caption">
+                {openEditDialog
+                  ? "قم بتحديث معلومات المنتج من هنا"
+                  : "املأ المعلومات التالية لإضافة منتج جديد"}
+              </Typography>
+            </DialogTitle>
+            <Divider />
+            <DialogContent>
+              <Grid container spacing={0.2} sx={{ marginTop: 0 }}>
+                <Grid item size={12}>
+    <Box>
+      <Button variant="contained" component="label">
+        رفع صورة المنتج
+        <input
+          hidden
+          type="file"
+          accept="image/*"
+          onChange={handleChange}
+        />
+      </Button>
+
+      {image && (
+        <Box mt={2}>
+          <img
+            src={image}
+            alt="preview"
+            style={{ width: "100%", borderRadius: 8 }}
+          />
+        </Box>
+      )}
+    </Box>
+                </Grid>
+                <Grid item size={12}>
+                  <TextField
+                    className="textfield"
+                    label=" اسم المنتج"
+                    fullWidth
+                    variant="outlined"
+                    sx={{
+                      "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                        {
+                          width: "100%",
+                        },
+                      "& .MuiOutlinedInput-root": {
+                        width: "100%",
+                      },
+                      "& .Mui-focused fieldset": {
+                        "& .MuiInputLabel-root.Mui-focused": {
+                          marginTop: "0px",
+                        },
+                        "&.MuiOutlinedInput-notchedOutline legend": {
+                          textAlign: "right",
+                        },
+                      },
+                    }}
+                  />
+                </Grid>
+                <Box sx={{ display: "flex", gap: 4 }}>
+                  <Grid item size={6} sx={{}}>
+                    <TextField
+                      className="textfield"
+                      label=" سعر المنتج"
+                      fullWidth
+                      variant="outlined"
+                      sx={{
+                        "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                          {
+                            width: "100%",
+                          },
+                        "& .MuiOutlinedInput-root": { width: "100%" },
+                        "& .Mui-focused fieldset": {
+                          "&.MuiOutlinedInput-notchedOutline legend": {
+                            textAlign: "right",
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item size={6}>
+                    <TextField
+                      className="textfield"
+                      label=" الكمية في المخزون"
+                      fullWidth
+                      variant="outlined"
+                      sx={{
+                        "& .MuiOutlinedInput-root.MuiInputBase-root.Mui-focused":
+                          {
+                            width: "100%",
+                          },
+                        "& .MuiOutlinedInput-root": { width: "100%" },
+                        "& .Mui-focused fieldset": {
+                          "& .MuiInputLabel-root.Mui-focused": {
+                            marginTop: "0px",
+                          },
+                          "&.MuiOutlinedInput-notchedOutline legend": {
+                            textAlign: "right",
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                </Box>
+                <Grid item size={12} sx={{}}>
+                  <Typography variant="h6" sx={{ margin: 1 }}>
+                    التصنيف
+                  </Typography>
+                  <RadioGroup
+                    aria-labelledby="demo-radio-buttons-group-label"
+                    defaultValue="عشبية صحية"
+                    name="radio-buttons-group"
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      margin: 1,
+                    }}
+                  >
+                    <FormControlLabel
+                      value="عشبية صحية"
+                      control={<Radio />}
+                      label="عشبية صحية"
+                    />
+                    <FormControlLabel
+                      value="سناكات صحية"
+                      control={<Radio />}
+                      label="سناكات صحية"
+                    />
+                    <FormControlLabel
+                      value="أدوات صحة"
+                      control={<Radio />}
+                      label="أدوات صحة"
+                    />
+                  </RadioGroup>
+                </Grid>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  sx={{ width: "100%" }}
+                >
+                  <Typography variant="h6" sx={{ display: "block" }}>
+                    المنتج نشط في المتجر
+                  </Typography>
+                  <FormControlLabel control={<Switch defaultChecked />} />
+                </Stack>
+              </Grid>
+              <Typography variant="h2" sx={{ marginTop: 5 }}></Typography>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                sx={{}}
+                onClick={() => {
+                  handleConfirm();
+                }}
+                variant="contained"
+              >
+                {openEditDialog ? "حفظ التغييرات" : "إضافة المنتج"}
+              </Button>
+              <Button onClick={handleConfirm} color="inherit">
+                الغاء الامر
+              </Button>
+            </DialogActions>
+          </Dialog>
         </Box>
       </Box>
     </>

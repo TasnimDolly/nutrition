@@ -80,7 +80,7 @@
 }
 .table-body-cell {
   width: fit-content !important;
-  /* max-width: 50px ; */
+  /* max-width: 50px !important; */
   border: 1px solid #777 !important;
   font-weight: 800 !important;
   text-align: center !important;

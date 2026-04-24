@@ -21,15 +21,18 @@ import Cart from "./Components/Cart.js";
 import Workshops from "./Components/Workshops.js";
 import Booking from "./Components/Booking.js";
 import DashHome from "./Dashboard/DashHome.js";
-import OTP from './Components/OTP.js';
+import OTP from "./Components/OTP.js";
 import DashPackages from "./Dashboard/DashPackages.js";
 import DashProducts from "./Dashboard/DashProducts.js";
 import DashBooking from "./Dashboard/DashBooking.js";
 import DashPatients from "./Dashboard/DashPatients.js";
 import DashContact from "./Dashboard/DashContact.js";
 import Settings from "./Dashboard/Settings.js";
+import DashNotifications from "./Dashboard/DashNotifications.js";
+import DashPayments from "./Dashboard/DashPayments.js";
+import DashWorkshops from "./Dashboard/DashWorkshops.js";
 
-import DashPosts from "./Dashboard/DashPosts.js"
+import DashPosts from "./Dashboard/DashPosts.js";
 function App() {
   return (
     <div className="App" style={{ direction: "rtl" }}>
@@ -45,21 +48,24 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Home" element={<Home />} />
 
-{/* just for nom  */}
-          <Route path="/" element={<DashHome/>} />
-          <Route path="/managePackages" element={<DashPackages/>} />
-          <Route path="/manage-products" element={<DashProducts/>} />
-          <Route path="/manage-appointments" element={<DashBooking/>} />
-          <Route path='/manage-patients' element={<DashPatients/>} />
-          <Route path="/settings" element={<Settings/>} />
-          <Route path='/manage-contact' element={<DashContact/>} />
-{/* just for nom  */}
+          {/* just for nom  */}
+          <Route path="/" element={<DashHome />} />
+          <Route path="/dash-notifications" element={<DashNotifications />} />
+          <Route path="/dash-Payments" element={<DashPayments />} />
+          <Route path="/managePackages" element={<DashPackages />} />
+          <Route path="/manage-products" element={<DashProducts />} />
+          <Route path="/manage-appointments" element={<DashBooking />} />
+          <Route path="/manage-patients" element={<DashPatients />} />
+          <Route path='/manage-workshops' element={<DashWorkshops />} />
+          <Route path="/manage-contact" element={<DashContact />} />
+          <Route path="/settings" element={<Settings />} />
+          {/* just for nom  */}
 
-          <Route path="/manage-posts" element={<DashPosts/>} />
+          <Route path="/manage-posts" element={<DashPosts />} />
           {/* just for nom  */}
 
           <Route path="/test1" element={<Test1 />} />
-          <Route path="/test2" element={<Test2/>} />
+          <Route path="/test2" element={<Test2 />} />
           <Route path="/test3" element={<Test3 />} />
           <Route path="/DietsPackages" element={<DietsPackages />} />
           <Route path="/TreatmentPackages" element={<TreatmentPackages />} />
