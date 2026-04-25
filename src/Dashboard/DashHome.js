@@ -68,21 +68,21 @@ export default function DashHome() {
             <DashStatisticsCard
               bg="#A125C333"
               icon={<MailIcon sx={{ marginRight: 1 }} />}
-              title="المواعيد اليومية"
+              title="مواعيد اليوم"
               value="12 موعد"
               description="باقي 4 مواعيد اليوم"
             />
             <DashStatisticsCard
               bg="#23AD5153"
               icon={<MailIcon sx={{ marginRight: 1 }} />}
-              title="استشارات الأسبوع"
-              value="58 حالة"
-              description="+2% عن الأسبوع الماضي"
+              title="المشتركين"
+              value="58 مريض"
+              description="+2% عن الشهر الماضي"
             />
             <DashStatisticsCard
               bg="#EF726133"
               icon={<MailIcon sx={{ marginRight: 1 }} />}
-              title="رسائل جديدة"
+              title="استفسارات جديدة"
               value="3 رسائل"
               description="تتطلب الرد"
             />
@@ -96,16 +96,16 @@ export default function DashHome() {
             <DashStatisticsCard
               bg="#FF1E6533"
               icon={<MailIcon sx={{ marginRight: 1 }} />}
-              title="منتجات نفذت من المخزون"
+              title="منتجات على وشك النفاد"
               value="12 منتج"
-              description="-2%"
+              description="سارع بتعبئة المخزون"
             />
             <DashStatisticsCard
               bg="#23AD5153"
               icon={<MailIcon sx={{ marginRight: 1 }} />}
-              title="المواعيد الملغية"
+              title="مرضى فوتوا الموعد"
               value="2 موعد"
-              description="0% تغيير"
+              description="+1% عن الشهر الماضي"
             />
           </Box>
           <Box

@@ -16,6 +16,27 @@ import { IconButton } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Typography } from "@mui/material";
 import GppGoodOutlinedIcon from "@mui/icons-material/GppGoodOutlined";
+import { DialogTitle } from "@mui/material";
+import { Dialog, Divider } from "@mui/material";
+import { DialogContent } from "@mui/material";
+import { DialogActions } from "@mui/material";
+import { useState } from "react";
+
+const data = [
+  {
+    id: 1,
+    item: "اوزان",
+    quantity: 2,
+    price: "150$",
+  },
+  {
+    id: 2,
+    item: "بروتين بار",
+    quantity: 1,
+    price: "100$",
+  },
+  { id: 3, item: "ميزان", quantity: 3, price: "50$" },
+];
 
 const PaymentsColumns = [
   { id: 1, label: "اسم المشتري" },
@@ -77,6 +98,18 @@ const PaymentsRows = [
 ];
 
 export default function DashPayments() {
+  const [cartVisible, setCartVisible] = useState(false);
+  const [receiptDetails, setReceiptDetails] = useState({ PaymentsRows });
+  const [chosenReceipt, setChosenReceipt] = useState("");
+
+  const showReceipt = (id) => {
+    const chosen = receiptDetails.PaymentsRows.find(
+      (receipt) => receipt.id === id,
+    );
+    setChosenReceipt(chosen);
+    setCartVisible(true);
+  };
+
   return (
     <>
       <Nav />
@@ -88,7 +121,14 @@ export default function DashPayments() {
             description="هنا يمكنك مراجعة جميع إيصالات الدفع التي تم استلامها من المرضى."
             notDisplayAddButton="none"
           />
-          <Box sx={{ margin: "20px 0", display: "flex", gap: "20px",justifyContent:"center" }}>
+          <Box
+            sx={{
+              margin: "20px 0",
+              display: "flex",
+              gap: "20px",
+              justifyContent: "center",
+            }}
+          >
             <DashStatisticsCard
               icon={
                 <PaymentsIcon
@@ -239,7 +279,6 @@ export default function DashPayments() {
                         alignItems: "center",
                       }}
                     >
-                      {" "}
                       {row.status}
                     </Typography>
                   ) : (
@@ -253,7 +292,6 @@ export default function DashPayments() {
                         alignItems: "center",
                       }}
                     >
-                      {" "}
                       {row.status}
                     </Typography>
                   )}
@@ -269,6 +307,7 @@ export default function DashPayments() {
                   >
                     <IconButton>
                       <VisibilityIcon
+                        onClick={showReceipt.bind(this, row.id)}
                         sx={{ color: "secondary.main" }}
                       ></VisibilityIcon>
                     </IconButton>
@@ -334,6 +373,143 @@ export default function DashPayments() {
               />
             </Box>
           </Box>
+          {/* //show the details of the receipt  */}
+          <Dialog
+            PaperProps={{ sx: { background: "#FFFFFF", padding: "10px" } }}
+            open={cartVisible}
+            onClose={() => setCartVisible(false)}
+            fullWidth
+            maxWidth="sm"
+            dir="rtl"
+          >
+            <Box id="for-print">
+              <DialogTitle  >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h4">تفاصيل إيصال الدفع</Typography>
+                  {chosenReceipt.status === "معلق" ? (
+                    <Typography
+                      variant="h2"
+                      sx={{
+                        color: "info.main",
+                        backgroundColor: "rgb(6, 54, 61,20%)",
+                        borderRadius: "50px",
+                        padding: "10px",
+                        margin: "0",
+                        justifySelf: "flex-end",
+                      }}
+                    >
+                      الحالة: {chosenReceipt.status}
+                    </Typography>
+                  ) : chosenReceipt.status === "مؤكد" ? (
+                    <Typography
+                      variant="h2"
+                      sx={{
+                        color: "success.main",
+                        backgroundColor: "rgb(10, 150, 10,20%)",
+                        borderRadius: "50px",
+                        padding: "10px",
+                      }}
+                    >
+                      الحالة: {chosenReceipt.status}
+                    </Typography>
+                  ) : (
+                    <Typography
+                      variant="h2"
+                      sx={{
+                        color: "error.main",
+                        backgroundColor: "rgb(200, 10, 10,20%)",
+                        borderRadius: "50px",
+                        padding: "10px",
+                      }}
+                    >
+                      الحالة: {chosenReceipt.status}
+                    </Typography>
+                  )}
+                </Box>
+                <Typography variant="h5">
+                  {" "}
+                  رقم الايصال: {chosenReceipt.invoice}{" "}
+                </Typography>
+                <Divider />
+                {/* // هون رح نجيب الوقت  */}
+                <Typography variant="h2" marginTop={2}>
+                  التاريخ: {chosenReceipt.date}
+                </Typography>
+                <Typography variant="h5">
+                  {" "}
+                  اسم المشتري: {chosenReceipt.name}{" "}
+                </Typography>
+                <Typography variant="h5">
+                  {" "}
+                  العنوان: {chosenReceipt.address}{" "}
+                </Typography>
+                <Typography variant="h5" marginBottom={2}>
+                  {" "}
+                  رقم الهاتف: {chosenReceipt.phone}{" "}
+                </Typography>
+              </DialogTitle>
+              <DialogContent >
+                <Typography variant="h5">تفاصيل المعاملة</Typography>
+                <DashTable
+                  columns={[
+                    { id: 1, label: "الصنف" },
+                    { id: 2, label: "الكمية" },
+                    { id: 3, label: "السعر" },
+                  ]}
+                  rows={data}
+                  renderRow={(row) => (
+                    <TableRow className="table-body" key={row.id}>
+                      <TableCell className="table-body-cell">
+                        {row.item}
+                      </TableCell>
+                      <TableCell className="table-body-cell">
+                        {row.quantity}
+                      </TableCell>
+                      <TableCell className="table-body-cell">
+                        {row.price}
+                      </TableCell>
+                    </TableRow>
+                  )}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    margin: "10px 0",
+                  }}
+                >
+                  <Typography variant="h4">إجمالي المبلغ المدفوع</Typography>
+                  <Typography variant="h4">{chosenReceipt.total}</Typography>
+                </Box>
+              </DialogContent>
+            </Box>
+            <DialogActions>
+              <Button
+                sx={{}}
+                onClick={() => {
+                  setCartVisible(false);
+                  window.print();
+                }}
+                variant="contained"
+              >
+                طباعة الايصال
+              </Button>
+              <Button
+                onClick={() => {
+                  setCartVisible(false);
+                }}
+                color="inherit"
+              >
+                إغلاق
+              </Button>
+            </DialogActions>
+          </Dialog>
         </Box>
       </Box>
     </>

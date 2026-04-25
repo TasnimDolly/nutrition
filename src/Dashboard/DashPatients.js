@@ -20,8 +20,6 @@ import { DialogTitle } from "@mui/material";
 import { Dialog, Divider } from "@mui/material";
 import { DialogContent } from "@mui/material";
 import { DialogActions } from "@mui/material";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
 import Grid from "@mui/material/Grid";
 import PatientProfile from "./PatientProfile.js";
 import { useState } from "react";

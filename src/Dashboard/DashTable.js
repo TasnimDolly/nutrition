@@ -4,15 +4,6 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { useState } from "react";
-import EditDialog from "./EditDialog";
-import DeleteIcon from "@mui/icons-material/Delete";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import { IconButton, Box, Collapse } from "@mui/material";
-import TimelineAccordion from "./TimelineAccordion";
-import DeleteDialog from "./DeleteDialog";
-import EditNoteIcon from "@mui/icons-material/EditNote";
 
 export default function DashTable({ columns, rows, renderRow }) {
   return (

@@ -85,7 +85,7 @@
   font-weight: 800 !important;
   text-align: center !important;
 }
-.patient-photo{
+.patient-photo {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -93,6 +93,22 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #for-print,
+  #for-print * {
+    visibility: visible;
+  }
+  #for-print {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
 }
 /* .App-logo {
   height: 40vmin;
